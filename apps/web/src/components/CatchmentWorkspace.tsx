@@ -66,8 +66,8 @@ export default function CatchmentWorkspace() {
   const [parkDetention, setParkDetention] = useState<boolean>(initialPark);
   const [zoneOnlyFix, setZoneOnlyFix] = useState<boolean>(false);
   const [showDrains, setShowDrains] = useState<boolean>(true);
-  const [showParks, setShowParks] = useState<boolean>(true);
-  const [showIncidents, setShowIncidents] = useState<boolean>(true);
+  const [showParks, setShowParks] = useState<boolean>(false);
+  const [showIncidents, setShowIncidents] = useState<boolean>(false);
   const [showMicroDrains, setShowMicroDrains] = useState<boolean>(true);
 
   const [zones, setZones] = useState<ZoneFeatureCollection | null>(null);
@@ -332,14 +332,14 @@ export default function CatchmentWorkspace() {
       {(microDrains?.features.length ?? 0) > 0 && (
         <button
           onClick={() => setShowMicroDrains((v) => !v)}
-          className={`absolute bottom-16 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full border px-3.5 py-1.5 text-[11px] font-semibold shadow-xl backdrop-blur-md transition ${
+          className={`absolute bottom-4 left-4 z-20 flex items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] font-medium transition ${
             showMicroDrains
-              ? "border-[#C8FF00]/50 bg-[#0C121A]/92 text-[#C8FF00]"
-              : "border-white/15 bg-[#0C121A]/80 text-slate-400 hover:text-white"
+              ? "border-sky-500/50 bg-[#11151C] text-slate-100"
+              : "border-[#242B38] bg-[#11151C] text-slate-400 hover:text-slate-200"
           }`}
         >
-          <span className="h-2 w-2 rounded-full bg-emerald-400" />
-          Street-Mapped Inlets ({microDrains?.features.length ?? 0}) · {showMicroDrains ? "ON" : "OFF"}
+          <span className={`h-2 w-2 rounded-full ${showMicroDrains ? "bg-sky-400" : "bg-slate-600"}`} />
+          <span className="tabular-nums">Street Inlets ({microDrains?.features.length ?? 0})</span>
         </button>
       )}
 
@@ -385,7 +385,7 @@ export default function CatchmentWorkspace() {
       )}
 
       {error && (
-        <div className="absolute left-1/2 top-20 z-20 max-w-lg -translate-x-1/2 rounded-xl border border-rose-500/40 bg-rose-950/95 px-4 py-2.5 text-xs text-rose-200 backdrop-blur-md shadow-xl">
+        <div className="absolute left-1/2 top-16 z-30 max-w-lg -translate-x-1/2 rounded-md border border-rose-500/40 bg-[#1F1216] px-4 py-2 text-xs text-rose-200 shadow-md">
           {error}
         </div>
       )}

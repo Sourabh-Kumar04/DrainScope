@@ -146,7 +146,7 @@ function buildSelectionOverlay(
     {
       type: "Feature",
       geometry: { type: "Point", coordinates: origin },
-      properties: { color: "#C8FF00", label: `~${Math.round(zone.est_ponding_cm * stormProgress)} cm` },
+      properties: { color: "#F8FAFC", label: `~${Math.round(zone.est_ponding_cm * stormProgress)} cm` },
     },
   ];
 
@@ -425,7 +425,7 @@ export default function CatchmentMap({
           type: "line",
           source: "ds-zones",
           filter: ["==", ["get", "zone_id"], "__none__"],
-          paint: { "line-color": "#C8FF00", "line-width": 2.8 },
+          paint: { "line-color": "#F8FAFC", "line-width": 2.2 },
         },
         firstSymbolId
       );
@@ -463,7 +463,7 @@ export default function CatchmentMap({
           type: "line",
           source: "ds-flow-beds",
           paint: {
-            "line-color": ["match", ["get", "kind"], "road", "#0ea5e9", "drain", "#38bdf8", "#a3e635"],
+            "line-color": ["match", ["get", "kind"], "road", "#0ea5e9", "drain", "#38bdf8", "#7dd3fc"],
             "line-width": ["match", ["get", "kind"], "road", 1.8, 1.1],
             "line-opacity": ["match", ["get", "kind"], "road", 0.24, 0.16],
           },
@@ -480,7 +480,7 @@ export default function CatchmentMap({
           source: "ds-flow-pulses",
           layout: { "line-cap": "round", "line-join": "round" },
           paint: {
-            "line-color": ["match", ["get", "kind"], "road", "#0284c7", "drain", "#38bdf8", "#C8FF00"],
+            "line-color": ["match", ["get", "kind"], "road", "#0284c7", "drain", "#38bdf8", "#7dd3fc"],
             "line-width": ["match", ["get", "kind"], "road", 5.2, 4.2],
             "line-opacity": 0.36,
             "line-blur": 2.2,
@@ -495,7 +495,7 @@ export default function CatchmentMap({
           source: "ds-flow-pulses",
           layout: { "line-cap": "round", "line-join": "round" },
           paint: {
-            "line-color": ["match", ["get", "kind"], "road", "#bae6fd", "drain", "#e0f2fe", "#f7fee7"],
+            "line-color": ["match", ["get", "kind"], "road", "#bae6fd", "drain", "#e0f2fe", "#e0f2fe"],
             "line-width": ["match", ["get", "kind"], "road", 2.1, 1.7],
             "line-opacity": 0.95,
           },
@@ -603,7 +603,7 @@ export default function CatchmentMap({
             "#10b981",
           ],
           "circle-stroke-width": 2,
-          "circle-stroke-color": "#ffffff",
+          "circle-stroke-color": "#0E1116",
         },
       });
     }
@@ -965,13 +965,13 @@ export default function CatchmentMap({
       {hoverInfo && displayMode === "contours" && (
         <div
           style={{ left: hoverInfo.x + 14, top: hoverInfo.y + 14 }}
-          className="pointer-events-none absolute z-30 max-w-xs rounded-xl border border-white/15 bg-[#0C121A]/95 px-3 py-2 text-xs shadow-2xl backdrop-blur-md"
+          className="pointer-events-none absolute z-30 max-w-xs rounded-md border border-[#262E3D] bg-[#11151C] px-3 py-2 text-xs shadow-lg"
         >
           <p className="font-semibold text-white">
-            {hoverInfo.zone.risk_tier} Susceptibility · <span className="font-mono text-cyan-300">{hoverInfo.zone.zone_id}</span>
+            {hoverInfo.zone.risk_tier} Susceptibility · <span className="font-mono text-sky-400">{hoverInfo.zone.zone_id}</span>
           </p>
           <p className="mt-0.5 text-[11px] text-slate-300">{hoverInfo.zone.diagnosis_headline}</p>
-          <p className="mt-0.5 font-mono text-[10px] text-slate-400">
+          <p className="mt-1 font-mono text-[10px] tabular-nums text-slate-400">
             Depth ~{Math.round(hoverInfo.zone.est_ponding_cm * stormProgress)} cm · Floods at &ge;{hoverInfo.zone.rain_to_flood_mm} mm/hr
           </p>
         </div>

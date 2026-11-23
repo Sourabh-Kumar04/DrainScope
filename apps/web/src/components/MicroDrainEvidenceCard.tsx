@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AlertTriangle, CheckCircle2, ExternalLink, MapPin, ShieldAlert, X } from "lucide-react";
+import { ExternalLink, X } from "lucide-react";
 import type { MicroDrainProperties } from "@/lib/types";
 
 interface MicroDrainEvidenceCardProps {
@@ -9,24 +9,27 @@ interface MicroDrainEvidenceCardProps {
   onClose: () => void;
 }
 
-const CONDITION_STYLES: Record<
+const CONDITION_META: Record<
   MicroDrainProperties["condition"],
-  { badge: string; box: string; label: string }
+  { dot: string; text: string; box: string; label: string }
 > = {
   blocked: {
-    badge: "border-rose-500/40 bg-rose-500/15 text-rose-300",
+    dot: "bg-rose-500",
+    text: "text-rose-400",
     box: "#f43f5e",
-    label: "BLOCKED / PONDING",
+    label: "Blocked / Ponding",
   },
   silted: {
-    badge: "border-amber-400/40 bg-amber-400/15 text-amber-200",
+    dot: "bg-amber-400",
+    text: "text-amber-300",
     box: "#f59e0b",
-    label: "SILTED / DEBRIS",
+    label: "Silted / Debris",
   },
   clear: {
-    badge: "border-emerald-400/40 bg-emerald-400/15 text-emerald-300",
+    dot: "bg-emerald-400",
+    text: "text-emerald-400",
     box: "#10b981",
-    label: "CLEAR INLET",
+    label: "Clear Inlet",
   },
 };
 
@@ -57,44 +60,39 @@ export default function MicroDrainEvidenceCard({ drain, onClose }: MicroDrainEvi
     }
   };
 
-  const style = CONDITION_STYLES[drain.condition] ?? CONDITION_STYLES.clear;
-  const [x1, y1, x2, y2] = Array.isArray(drain.bbox_norm) && drain.bbox_norm.length === 4
-    ? drain.bbox_norm
-    : [0.4, 0.6, 0.6, 0.8];
-
-  const Icon =
-    drain.condition === "blocked"
-      ? ShieldAlert
-      : drain.condition === "silted"
-      ? AlertTriangle
-      : CheckCircle2;
+  const meta = CONDITION_META[drain.condition] ?? CONDITION_META.clear;
+  const [x1, y1, x2, y2] =
+    Array.isArray(drain.bbox_norm) && drain.bbox_norm.length === 4
+      ? drain.bbox_norm
+      : [0.4, 0.6, 0.6, 0.8];
 
   const mapillaryUrl = `https://www.mapillary.com/app/?pKey=${encodeURIComponent(drain.image_id)}&focus=photo`;
 
   return (
-    <div className="absolute bottom-20 right-4 z-30 w-[370px] overflow-hidden rounded-2xl border border-white/15 bg-[#0A0F17]/95 shadow-2xl backdrop-blur-xl">
-      <div className="flex items-center justify-between border-b border-white/10 px-4 py-2.5">
-        <div className="flex items-center gap-2">
-          <MapPin className="h-4 w-4 text-[#C8FF00]" />
-          <div>
-            <p className="font-mono text-xs font-bold text-white">
-              {drain.id} · <span className="text-cyan-300">{drain.corridor}</span>
-            </p>
-            <p className="text-[10px] text-slate-400">
-              Street-Mapped Micro-Drainage · Captured {drain.captured_date}
-            </p>
+    <aside className="absolute right-0 top-14 z-30 flex w-[360px] flex-col border-b border-l border-[#242B38] bg-[#11151C] text-slate-200 shadow-lg">
+      {/* Header */}
+      <div className="flex items-center justify-between border-b border-[#242B38] px-4 py-3">
+        <div className="min-w-0">
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-xs font-semibold text-white">{drain.id}</span>
+            <span className="text-[#3E4859]">/</span>
+            <span className="truncate text-xs font-medium text-slate-300">{drain.corridor}</span>
           </div>
+          <p className="mt-0.5 text-[11px] text-slate-400">
+            Street-Mapped Inlet · Captured {drain.captured_date}
+          </p>
         </div>
         <button
           onClick={onClose}
-          className="rounded-lg p-1 text-slate-400 transition hover:bg-white/10 hover:text-white"
+          aria-label="Close inlet inspector"
+          className="rounded p-1 text-slate-400 transition hover:bg-[#1C2330] hover:text-white"
         >
           <X className="h-4 w-4" />
         </button>
       </div>
 
-      {/* Real Mapillary Photo + Exact Detection Bounding Box */}
-      <div className="relative aspect-[16/10] w-full bg-[#06090F]">
+      {/* Street Photo + Exact SVG Detection Box */}
+      <div className="relative aspect-[16/10] w-full border-b border-[#242B38] bg-[#0B0E14]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imgSrc}
@@ -113,45 +111,58 @@ export default function MicroDrainEvidenceCard({ drain, onClose }: MicroDrainEvi
             width={Math.max(2, (x2 - x1) * 100)}
             height={Math.max(2, (y2 - y1) * 100)}
             fill="none"
-            stroke={style.box}
-            strokeWidth="0.9"
+            stroke={meta.box}
+            strokeWidth="1.2"
             vectorEffect="non-scaling-stroke"
           />
         </svg>
-        <div
-          className={`absolute left-2.5 top-2.5 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-bold backdrop-blur-md ${style.badge}`}
-        >
-          <Icon className="h-3 w-3" />
-          {style.label}
+      </div>
+
+      {/* Tabular Telemetry Grid */}
+      <div className="grid grid-cols-3 divide-x divide-[#242B38] border-b border-[#242B38] bg-[#0E1117]">
+        <div className="px-3 py-2">
+          <p className="text-[10px] uppercase tracking-wider text-slate-500">Status</p>
+          <p className={`mt-0.5 flex items-center gap-1.5 text-[11px] font-medium ${meta.text}`}>
+            <span className={`h-1.5 w-1.5 rounded-full ${meta.dot}`} />
+            {meta.label.split(" / ")[0]}
+          </p>
         </div>
-        <div className="absolute bottom-2 right-2 rounded-md bg-black/75 px-2 py-0.5 font-mono text-[10px] text-slate-200 backdrop-blur-sm">
-          {Math.round(drain.confidence * 100)}% conf · ~{drain.est_dist_m}m
+        <div className="px-3 py-2">
+          <p className="text-[10px] uppercase tracking-wider text-slate-500">Confidence</p>
+          <p className="mt-0.5 font-mono text-xs tabular-nums text-white">
+            {Math.round(drain.confidence * 100)}%
+          </p>
+        </div>
+        <div className="px-3 py-2">
+          <p className="text-[10px] uppercase tracking-wider text-slate-500">Curb Dist</p>
+          <p className="mt-0.5 font-mono text-xs tabular-nums text-white">~{drain.est_dist_m} m</p>
         </div>
       </div>
 
-      <div className="space-y-2 p-3.5 text-xs">
+      {/* Details & Source Link */}
+      <div className="space-y-2.5 p-4 text-xs">
         <div className="flex items-center justify-between">
-          <span className="font-semibold capitalize text-white">{drain.label}</span>
+          <span className="font-medium capitalize text-white">{drain.label}</span>
           {drain.sightings && drain.sightings > 1 && (
-            <span className="rounded-full bg-white/10 px-2 py-0.5 font-mono text-[10px] text-cyan-300">
+            <span className="font-mono text-[10px] tabular-nums text-slate-400">
               {drain.sightings} frame sightings
             </span>
           )}
         </div>
-        <p className="text-[11px] leading-relaxed text-slate-300">{drain.condition_note}</p>
-        <div className="flex items-center justify-between border-t border-white/10 pt-2 text-[10px] text-slate-400">
+        <p className="text-[11px] leading-relaxed text-slate-400">{drain.condition_note}</p>
+        <div className="flex items-center justify-between border-t border-[#242B38] pt-2.5 text-[11px] text-slate-500">
           <span className="truncate pr-2">{drain.detector || "Offline CV Micro-Drain Inventory"}</span>
           <a
             href={mapillaryUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex shrink-0 items-center gap-1 font-semibold text-[#C8FF00] hover:underline"
+            className="inline-flex shrink-0 items-center gap-1 font-medium text-sky-400 hover:text-sky-300"
           >
-            Verify Source
+            Mapillary
             <ExternalLink className="h-3 w-3" />
           </a>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }
