@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node / Next.js
+node_modules/
+apps/web/.next/
+apps/web/out/
+
+# Environment & local GIS rasters
+.env
+.env.local
+packages/gis-pipeline/data/raw/*.tif
+packages/gis-pipeline/data/work/*.tif
+*.log
+
+# Secrets & local builds
+apps/web/.env.local
+apps/web/.next/
+apps/web/node_modules/
+**/.venv/
+**/__pycache__/
+*.pyc
+packages/gis-pipeline/data/raw/*.tif

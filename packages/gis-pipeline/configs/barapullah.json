@@ -1,0 +1,62 @@
+{
+  "slug": "barapullah",
+  "display_name": "Barapullah Sub-Catchment, South Delhi",
+  "bbox_wgs84": [
+    77.175,
+    28.515,
+    77.275,
+    28.595
+  ],
+  "buffer_deg": 0.015,
+  "crs_utm": "EPSG:32643",
+  "h3_resolution": 9,
+  "burn_depth_m": 2.0,
+  "storm_base_scalar": 0.63,
+  "display_wsi_cutoff": 0.38,
+  "rational_method_max_area_ha": 50.0,
+  "rasters": {
+    "dem_filename": "copernicus_barapullah.tif",
+    "dem_fallback_filename": "fabdem_barapullah.tif",
+    "dem_license": "Copernicus GLO-30 DEM (Open Commercial License). Note: FABDEM v1-2 is CC BY-NC-SA 4.0 (non-commercial research only unless licensed from Fathom).",
+    "worldcover_filename": "worldcover_barapullah.tif",
+    "worldcover_s3_url": "/vsicurl/https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N27E075_Map.tif",
+    "copernicus_s3_url": "/vsicurl/https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E077_00_DEM/Copernicus_DSM_COG_10_N28_00_E077_00_DEM.tif"
+  },
+  "weights_wsi": {
+    "twi": 0.25,
+    "trap": 0.2,
+    "runoff": 0.2,
+    "drain_deficit": 0.2,
+    "storm_load": 0.15
+  },
+  "stress_scenarios": {
+    "0": {
+      "label": "Baseline",
+      "imp_creep": 0.0,
+      "rain_mult": 1.0,
+      "drain_decay": 1.0,
+      "rationale": "Current baseline from 30m DEM, ESA WorldCover 2021, and OSM trunk drains."
+    },
+    "2": {
+      "label": "+2 Yr Stress",
+      "imp_creep": 2.5,
+      "rain_mult": 1.04,
+      "drain_decay": 1.05,
+      "rationale": "Illustrative near-term infill (+2.5% paved), +4% storm intensity, 5% drain siltation."
+    },
+    "5": {
+      "label": "+5 Yr Stress",
+      "imp_creep": 6.0,
+      "rain_mult": 1.1,
+      "drain_decay": 1.12,
+      "rationale": "Illustrative medium-term densification (+6% paved), +10% storm intensity, 12% drain siltation."
+    },
+    "10": {
+      "label": "+10 Yr Stress",
+      "imp_creep": 11.5,
+      "rain_mult": 1.18,
+      "drain_decay": 1.22,
+      "rationale": "Illustrative high-stress scenario (+11.5% paved), +18% extreme rain, 22% unmaintained drain loss."
+    }
+  }
+}

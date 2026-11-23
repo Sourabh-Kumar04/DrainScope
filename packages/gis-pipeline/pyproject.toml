@@ -1,0 +1,21 @@
+[project]
+name = "drainscope-gis-pipeline"
+version = "0.1.0"
+description = "Offline geospatial hydrology & organic waterlogging contour pipeline"
+requires-python = ">=3.11"
+dependencies = [
+    "geopandas>=1.0.0",
+    "rasterio>=1.4.0",
+    "rasterstats>=0.20.0",
+    "whitebox>=2.3.0",
+    "osmnx>=2.0.0",
+    "h3>=4.1.0",
+    "shapely>=2.0.0",
+    "scipy>=1.13.0",
+    "numpy>=2.0.0",
+    "pandas>=2.2.0",
+    "pyarrow>=17.0.0",
+    "pillow>=13.0.0",
+    "torch>=2.15.0",
+    "transformers>=5.24.0",
+]
