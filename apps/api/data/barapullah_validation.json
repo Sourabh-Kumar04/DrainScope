@@ -1,0 +1,16 @@
+{
+  "catchment_slug": "barapullah",
+  "validated": true,
+  "status_label": "Validated Screening \u00b7 AUC 0.65 \u00b7 Top-10% Lift 3.1x",
+  "source_name": "Seed Delhi Traffic Police (2025-26) & IIT Delhi DMP South Delhi Hotspots",
+  "incident_points_in_aoi": 17,
+  "positive_cells": 16,
+  "total_cells": 716,
+  "roc_auc": 0.651,
+  "pr_auc": 0.048,
+  "lift_top_10_pct": 3.12,
+  "lift_top_20_pct": 2.19,
+  "hit_rate_top_20_pct": 43.8,
+  "evaluated_at_utc": "2026-11-20T07:00:38.936808+00:00",
+  "notes": "Evaluated against H3 Res-9 WSI susceptibility scores inside the catchment bounding box."
+}

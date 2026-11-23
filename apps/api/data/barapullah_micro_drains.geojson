@@ -1,0 +1,2012 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "catchment_slug": "barapullah",
+    "generated_at_utc": "2026-11-23T19:35:17.500543+00:00",
+    "frames_scanned": 80,
+    "raw_detections": 115,
+    "unique_micro_drains": 57,
+    "condition_counts": {
+      "clear": 21,
+      "silted": 23,
+      "blocked": 13
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.230159,
+          28.565928
+        ]
+      },
+      "properties": {
+        "id": "MD-001",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.491,
+        "est_dist_m": 13.5,
+        "bbox_norm": [
+          0.7002,
+          0.6226,
+          0.9971,
+          0.6987
+        ],
+        "image_id": "809608336428647",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQPCRPA0sScNiCsUmrmiWbIDFbTYzqkX0chzIpI2uFhZFC9c-qHv2sWtW8khmyjcvs7-5vlmIv8yNKHh08QOrwQZx6pZws3WMUCNr8dwsYCWOwjd_GipBglse4D6vy-VNZ_PCwVZ1D4nvbIV7G0-KdeMmiszMsJ8RN0Kz_7e3vIYTjc?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=Ado_XZUTYqYne0vJS3GE950XfdIRjsNlIkyRwiBQQr6z0GSWsgDmGFptYrPgH5uSIbY&ccb=10-5&oh=00_AQQIrCVfRdUEd0ag8N4ye0AgAbmsCa_b_h-VS93xXpwoxQ&oe=6B2C1EF7&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 128.9,
+        "camera_coord": [
+          77.230101,
+          28.566038
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.231548,
+          28.565845
+        ]
+      },
+      "properties": {
+        "id": "MD-002",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.485,
+        "est_dist_m": 7.9,
+        "bbox_norm": [
+          0.1261,
+          0.6958,
+          0.4165,
+          0.9956
+        ],
+        "image_id": "541484573508003",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMPSsEYsBOVbr_N9EJ8q3YnR2tKt96Gj_EDto7HwLlwrorruD20CpFy0wM9tQOjl24FS9uLtsagqbMpP4wzpg8yXXmKCROypLnuVCN_s3G8ZR3dZygWNLSRxvDaIu_xm521Nq7VEb7dd4dlu2f7Gp8lcOmphArz8YkAvS8lrRT9HA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=Adp2ZSB_7RJdVRYfPuIBk4WQCqz0E2fZgl404UQiAGs6P4pquSp2Xn02Sk6TJIE6PGE&ccb=10-5&oh=00_AQQQH2UIBMDeSrRlONQwA-ca8jImptQxQmIbgSPykfMQPQ&oe=6B2BF98F&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 102.2,
+        "camera_coord": [
+          77.231468,
+          28.565839
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.230235,
+          28.564137
+        ]
+      },
+      "properties": {
+        "id": "MD-003",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.48,
+        "est_dist_m": 8.0,
+        "bbox_norm": [
+          0.0702,
+          0.6611,
+          0.3794,
+          0.9961
+        ],
+        "image_id": "300578234856955",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQN8Ugxyxp75k7lWcjfqruEYjW3NBiQ40yRTHsMUGpuLXFiZG6J4Onao0bTUxEE3-U_YICS__7ArNRwqYKrrgc_RjRbtijssf45anSJX722u22K1KVDH2lUxal7o2OVt0DlHVHmt_jPEH1qtfIa1Qk8xsIxlnrKExjIiDKELLDXOMw?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=AdoWdEfD_8y9-gcIAqITOJt-tPrWr3x35Z9wwgykB0vDpFU8cPEpeVg4Kq8FLVF3Ers&ccb=10-5&oh=00_AQSzHdypk2RyBE13qF1wLs4pEFBDt__NpicRVWJ2t5r_9g&oe=6B2C056F&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 118.0,
+        "camera_coord": [
+          77.230154,
+          28.564147
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.230712,
+          28.565785
+        ]
+      },
+      "properties": {
+        "id": "MD-004",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.449,
+        "est_dist_m": 12.8,
+        "bbox_norm": [
+          0.7529,
+          0.6641,
+          0.9971,
+          0.751
+        ],
+        "image_id": "468131060921504",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQN3sxJEtFhtjB2XwT-IhGQO8QnEJeratY3zgQZETIxFHf-WK_A4EtLy300MnR_VjZ-4W-ysDa1eloCl6ivyrmlc1w56IHcqNfnHV1APJGM3xNqBQphM8ZROxuIQEflGUBTzGCl477hp2h8AUZR07ItwUdDyB0bcNGZf8kEZ2_4dMw?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=Ado-iYzzN_AdBpEHoKiOn0bGNVTiAIms-BpGcB0C0k0t63mgXuuRgX4CneC49Kt9s_k&ccb=10-5&oh=00_AQQB7rlSB9q17TqYbpXk7QDlC_0Bp1DQiQigbez9G3nPBA&oe=6B2BFF2B&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 121.6,
+        "camera_coord": [
+          77.230646,
+          28.565884
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.209333,
+          28.572978
+        ]
+      },
+      "properties": {
+        "id": "MD-005",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.436,
+        "est_dist_m": 9.5,
+        "bbox_norm": [
+          0.6855,
+          0.7451,
+          0.9971,
+          0.9092
+        ],
+        "image_id": "129115679253176",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQPt05VF4Fkd_68R51MAsTdB_wLHPZuR0elkj2uKWrU1LBScMDIwaPR3f2ozxx2GqW87c_U62aQbM3uB577OukF2ifJvpS5QpFdXskcXa6cKIPsm6Qdm-MuJlObkK8Jyoo3Fmla9LXE56AJbGeP73SYWE72wcKIgf15RknID5-eIJg?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdocgJN-Hl9Ymq7Y9AbQWpKi2-Gywr-9kPnVngcfrcF5oVl9JmgdXnE_jUJZcxxnung&ccb=10-5&oh=00_AQRcO_0U2QVnDa_ROfOsAa4eL3MtAlpNXVjEdfl6kqhoZQ&oe=6B2BF55A&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 5.8,
+        "camera_coord": [
+          77.209283,
+          28.572905
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.208931,
+          28.57108
+        ]
+      },
+      "properties": {
+        "id": "MD-006",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.434,
+        "est_dist_m": 10.9,
+        "bbox_norm": [
+          0.002,
+          0.7368,
+          0.4861,
+          0.8804
+        ],
+        "image_id": "392914458391243",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQPAu8zsFENd5NcBKjqteY9AKcBnk1idhrwl-tT2paJf447vYQ6vkADrBT856rR5Gr-9McJmIM7Gj7AX-93hUO7RDEbiT7giAo7Qp8E_Rm-XlO23CWvU3_tPf4oXgQuWxSw_vVp1L1aFGjcVlFn2kYeHR3ev8ti4zmoPLW3Y8YvVAg?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=Ado-35SmSSXQznnVMINw3cTRZADpLZqKR-ZC4sv687sfW1eb_IK5T4v_1rUROLZ3nWY&ccb=10-5&oh=00_AQQBDt9D60rT8d43werI7XhrDtKpvpR3ZumszjKkCyQanA&oe=6B2C1B79&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 10.1,
+        "camera_coord": [
+          77.208949,
+          28.570983
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.229666,
+          28.566223
+        ]
+      },
+      "properties": {
+        "id": "MD-007",
+        "corridor": "Defence Colony - Andrews Ganj",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.421,
+        "est_dist_m": 8.0,
+        "bbox_norm": [
+          0.0032,
+          0.6699,
+          0.3823,
+          0.9941
+        ],
+        "image_id": "261087895753929",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQPsS06EYlAT-o2uW12nBp_1T_-AiMVeHuA_mLIHypjM7bGUpWYX-6cmBdy5fiIYIoe7820KreFBNwaxmS2hbL7XLqMs-HU0aC3cenH1GJ5BpQDQGs7JAPPrD2GJNUJR9D2a7DLHgVoExb2_ytaJR_9c8Lx_lYzHBJ2JeCdcvWIKiA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=beJN_1Xl2BBCBDCxJXLn5g&_nc_oc=Adq2n41vQvJgpWE7Ntqywx6pFWANCK2_pUE1RjjeQNv_wvNkbok4nfxoNkvdHDVLps4&ccb=10-5&oh=00_AQRZ6248xBh-KLO7GrSSb2NeC_7Ok8etSalX92qWztmgrQ&oe=6B2C1A15&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 133.6,
+        "camera_coord": [
+          77.22959,
+          28.566248
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.209312,
+          28.572764
+        ]
+      },
+      "properties": {
+        "id": "MD-008",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.411,
+        "est_dist_m": 9.9,
+        "bbox_norm": [
+          0.6777,
+          0.7271,
+          0.9971,
+          0.8853
+        ],
+        "image_id": "5422903954418584",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQOiCv0XdmhWB0fYiN3lvEDm2WmYtFo2HT3NpgFjINKcp57AkdyqSqcK9DcLHgqzwcTMDAHMrKlcybGEr4PE_-JcfKtxSE2_uWmbL4z0Q457TIFxTOkFZUGq9FXR42dMeYXQxtRytFNFxEMSHatiqRcLpMRHac_L3iwM6P3im92tKg?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdrY0pU1-zNxGGq_lIwjRzMV_EyrAg3LYZptNBt0fiTQXdyX9MP9cMjCZx814puritY&ccb=10-5&oh=00_AQReXmFhfDi8UR1hf_8bjwCR38ASyrXf40Glxw5dg7SVjw&oe=6B2BE9E9&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 4.4,
+        "camera_coord": [
+          77.209261,
+          28.572687
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.207251,
+          28.56905
+        ]
+      },
+      "properties": {
+        "id": "MD-009",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.409,
+        "est_dist_m": 13.6,
+        "bbox_norm": [
+          0.4116,
+          0.5122,
+          0.7798,
+          0.6665
+        ],
+        "image_id": "369767794466766",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMeZF_k3BW0tMw2pdiQCk6APpLBrlAnpbMTVBwmFv1499mS-Lkamc092WOuYWcqCLX7y2HgEJ13oZI6Chtkl8bezujtNDDxSM4KYdMA0RnnbHKLe4zVxI3bHlzxG2umIKsWiOLUfHgjqVSC_87FuWxz7YNpdfh9TBYCD5lQqHBqNg?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdqCKb6rVx6oWBfen0YCEz98NTvT0jHifS5rkrQy9_b7jod9BsbKGaeLZKzIdBJbVHk&ccb=10-5&oh=00_AQT5ev77gU4YBQQ-o5Ao4XszS-z6Mjpv51cWWlNl-bUU1g&oe=6B2BFA32&_nc_sid=201bca",
+        "captured_date": "2019-05-20",
+        "compass_angle": 0.0,
+        "camera_coord": [
+          77.207234,
+          28.568929
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.223199,
+          28.565056
+        ]
+      },
+      "properties": {
+        "id": "MD-010",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.392,
+        "est_dist_m": 12.8,
+        "bbox_norm": [
+          0.4751,
+          0.5269,
+          0.8179,
+          0.6265
+        ],
+        "image_id": "1278815109199852",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQN7A4bE8SrYaGOP0KrONIcOy73p9FbXFLs34QMXTDfFMYeY9jjmpXWa0Q-08cY0Tn3IvICdPbLWXe1Ea2yJ48dOAGzOwRu2k5uZBcMzlSwlc0AljiXXovTaZK8Xc9J9ikeEHlIlezX6sJTnrN3eLHx2q9tA20KU9iOO3_lwZAjT_w?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdrPkDbHWrI8ObWzNHAo3TbgDBS8ifBabil3fXQIiMhpaM44WhkD5GnuiwtP514uYw8&ccb=10-5&oh=00_AQRI8ulqkMiNdgR70g4-r46P7KT2UfFl4Ai4VHTBh77xmQ&oe=6B2C16E7&_nc_sid=201bca",
+        "captured_date": "2019-05-21",
+        "compass_angle": 25.3,
+        "camera_coord": [
+          77.223122,
+          28.564964
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.230419,
+          28.565858
+        ]
+      },
+      "properties": {
+        "id": "MD-011",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.39,
+        "est_dist_m": 13.8,
+        "bbox_norm": [
+          0.6816,
+          0.5903,
+          0.998,
+          0.6558
+        ],
+        "image_id": "298791655049262",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQNpLHq5KGNo-1XPsItgr3xvSkbue6G00QCqUPsmVlwGfWlyqzRK76pTkihSvwj6JTj8-BQLjMuxzXVfdY6DXWCrjyfM190wzddLqzJddGhf-LCSdCJB359G0zd1ov0fdKvVpC7mQ-hBWowsshxnisC7sz2gtYU-3eWSBlW3rxn8rQ?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=Adp4z53NJaaAdPv74Vo6hePE6o6hrDsW6mAVfS8cshDZpSRyTMLLZCC4o0c-dyl7J3k&ccb=10-5&oh=00_AQTl5C_hzeoMoIrwQQWIwmPbdOv2tKAG2JHX-jCu1hbJKA&oe=6B2C0917&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 122.4,
+        "camera_coord": [
+          77.230344,
+          28.565963
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.234113,
+          28.56621
+        ]
+      },
+      "properties": {
+        "id": "MD-012",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.387,
+        "est_dist_m": 10.5,
+        "bbox_norm": [
+          0.4651,
+          0.5962,
+          0.9932,
+          0.8501
+        ],
+        "image_id": "2869340506663637",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQNP2lus5K7Uvbtun-ihZzHhTYpY5NdOF_oDNHLPo16xmpbkoNbh2EJNHgboqUUq7Mm12NW31orTNbz_WiNwQtpRwVxcaA9me0rJ11f8A02txu5zJSNwawag2aOu57HbZ7YpTQ03hPYve0EdIdKrsZuPkolEk_sfrWD2K6QFqx5kkw?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=Ado4AMABlHjvJfQE8kAIoc1zAyz9ztNvon30neK7IdgL3v6BvPt_6py9M4-g3GQawVk&ccb=10-5&oh=00_AQQdesWpVsVqKlr2zpsRiJI5Y0G3o_TyJ36hAyj2Fv-oSw&oe=6B2C118F&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 22.7,
+        "camera_coord": [
+          77.234044,
+          28.566138
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.229443,
+          28.541846
+        ]
+      },
+      "properties": {
+        "id": "MD-013",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "road puddle",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.386,
+        "est_dist_m": 3.2,
+        "bbox_norm": [
+          0.1895,
+          0.5981,
+          0.6494,
+          0.9956
+        ],
+        "image_id": "797866665879339",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQOv4_hBTendTSMR0PFOVOjjn5Dm9uyx4vEjZ91F3qgD2cPsyjUz0GmUGCEj9hlRWBPE2AXRaXmT-HON6CnIcW0oN25WTm6MoDZGHxM6xn-4f0zv7l9YGsNpRTspNqtALhQ_VAPLbqTh-9MQab-FHrZ3t2mLppyGfPDJnnsyOJDO4g?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdoltTnDIkh23Rq5SXIwihI3SUeDD-dyD56oDjpRI9M2UtxWfBb0SZPpYEiUyL9ZmBo&ccb=10-5&oh=00_AQQx0Wzg3fUTWZ8L-OiVrDezSEYi1rqwZ013rSSa8JWibQ&oe=6B2C0086&_nc_sid=201bca",
+        "captured_date": "2024-07-28",
+        "compass_angle": 155.0,
+        "camera_coord": [
+          77.229426,
+          28.541871
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.209192,
+          28.571902
+        ]
+      },
+      "properties": {
+        "id": "MD-014",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.385,
+        "est_dist_m": 11.0,
+        "bbox_norm": [
+          0.6904,
+          0.7476,
+          0.998,
+          0.8696
+        ],
+        "image_id": "2982652601953761",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQNUGmEbJagxfxRbPTzTxlZIdi-1y_vqi_jwZeObKVPkg5zlCMgHnOdj4x54EZbGTsELUgwX574MIZ3Y1txPWAEPosv7SyoY2mYY0YJItMtUiHMVg4fMMouUVpda69acmw2MWP3AB-89kaVw9hKStTtpK_tWUhy6qa-xHDBZ0T1gMw?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdqRmk8x-c4g9vhMwQICBOw6ndjyLeIsuF90UWSlDej5U20X9CpmTmUhb0HRXzvW5L0&ccb=10-5&oh=00_AQSA1fMWy5y-YFF7KpEsNqVgKdcXomzOsdtYx77dtv5qDw&oe=6B2BF863&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 10.4,
+        "camera_coord": [
+          77.209126,
+          28.571822
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.209066,
+          28.571664
+        ]
+      },
+      "properties": {
+        "id": "MD-015",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.381,
+        "est_dist_m": 13.2,
+        "bbox_norm": [
+          0.2166,
+          0.752,
+          0.4089,
+          0.7959
+        ],
+        "image_id": "2265534406910619",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMRDogm0kf44Ycc-1EBqZ3HM6KtuWQhuRzPCxZP0vtu3UFxZuxqWKSiFdXTHgUf1mPYbaJeQKZEx5WMCi7Khb_KEJ8pAeJecsAItomTqY0zkVUsdDCjkfAmrlVbP0U4yBHm1WDrMsm15YC6T3PFNHbco_PbWZvWU0xGAW-20qsQyQ?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdoOMuJP9hxRBzvoKdAQSjXJsPH6pm7ktdUypR2UzxKzhB9AgCRCbcPtSeow-Wuu5lk&ccb=10-5&oh=00_AQT_dEfp_9wio0JVTh23FlipUGIdyNAsb3HPERBUDshwOA&oe=6B2BF360&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 11.0,
+        "camera_coord": [
+          77.209073,
+          28.571546
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.236488,
+          28.540821
+        ]
+      },
+      "properties": {
+        "id": "MD-016",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.38,
+        "est_dist_m": 4.8,
+        "bbox_norm": [
+          0.7886,
+          0.7744,
+          0.9976,
+          0.9111
+        ],
+        "image_id": "1528000964060654",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQP2l12bxLPUBlq4ocTSnUMnDcG9-K89sXdwk98AJi1dyc2QjU8oh-sxUb8XCYtH9JVFYjKs5EzvI7nlda3PHNPabIEREYj7sq6JFkqURqStK4rzVH0XkjlT2cLxqTNTnADuJbMi34IoVtcthEwXwU0coDGXN-RdVvdzYFFVSV0jVA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdoGfJH0_uMK_hNjDsj7zSMuUPDCB7szKXwNkDRkbF3h6gT6SL-B1qebgML4lVMZvZc&ccb=10-5&oh=00_AQS7PVEnib7U0vvfDQ6psK9CMxodzhPRxFYdn14qFWfu4A&oe=6B2C1355&_nc_sid=201bca",
+        "captured_date": "2019-07-31",
+        "compass_angle": 76.9,
+        "camera_coord": [
+          77.236441,
+          28.540833
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.237166,
+          28.570361
+        ]
+      },
+      "properties": {
+        "id": "MD-017",
+        "corridor": "Defence Colony - Andrews Ganj",
+        "label": "drainage grate",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.367,
+        "est_dist_m": 9.8,
+        "bbox_norm": [
+          0.2603,
+          0.6689,
+          0.5825,
+          0.7861
+        ],
+        "image_id": "136790598444825",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQO8Ek3zWFB9ZXpeQW9JNVXRwUC9l_a9Yfd7ovAV-Tgd26B5ecgS7p8SxJBU5Tyz_DBipuAGvVs3b4Nt_SNN9Q-BDreKRZ9ssApjkJzaJblM34jjLmjwkxp_6TlzJ2nJDHv4UbfXlTl2w6CWjh9nEhmbcPZNYf6e9FZNbTS_xaiREw?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=beJN_1Xl2BBCBDCxJXLn5g&_nc_oc=AdpMQVFuxteor9T-c4H0AYLVJ2AP4NLcgnmRBcDF-FoOkATRU7UAtZGVQHP5sfl_PsM&ccb=10-5&oh=00_AQR9EWRajLbQ2-WqOn7CeYXiBvyDfN3M4uRMurgdwBmvXA&oe=6B2BECA7&_nc_sid=201bca",
+        "captured_date": "2019-08-31",
+        "compass_angle": 144.5,
+        "camera_coord": [
+          77.2371,
+          28.570427
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.228646,
+          28.548371
+        ]
+      },
+      "properties": {
+        "id": "MD-018",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.363,
+        "est_dist_m": 15.2,
+        "bbox_norm": [
+          0.2473,
+          0.7036,
+          0.8926,
+          0.7573
+        ],
+        "image_id": "239004944690003",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQNhHIk2aKDi8YCdLOXamdUCEWHEg2PkTylkGvCbxVd6zOhhPGawlMZswrbCP35hjOCM96Ryu9Ka9zycguDiaPwO_hxqtI3T4koLHFIdh6JxDUY-pXkH1lm-CSsR43lscogo-oWNcMNuS752kIQ9H-isLcmZH9ilHmmyDTCI6xulHw?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdqwstLJ7cGJ_yw1ujudahEeeeeejwc3wSg_C6kiBkKLfk6meYnNHSKMNYYkCRvN6S4&ccb=10-5&oh=00_AQTkRmoh4kUPCPk5noVYb83F64fnuB1A8AgvUpT4BK_nVw&oe=6B2BFD97&_nc_sid=201bca",
+        "captured_date": "2019-07-22",
+        "compass_angle": 338.7,
+        "camera_coord": [
+          77.228689,
+          28.54824
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.234225,
+          28.566913
+        ]
+      },
+      "properties": {
+        "id": "MD-019",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.36,
+        "est_dist_m": 8.9,
+        "bbox_norm": [
+          0.5361,
+          0.5332,
+          0.9961,
+          0.9336
+        ],
+        "image_id": "280681073737336",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMm_7zENxEusWhmGVdJoIdMwICfQxW2_12gQBcHk2UaZuLfEOMFLtpSN7uIqMqpoPUZ6FFoJAEBLaVz20-QDDc6lpPANI3mosdkjrNc7aeM9avMCdFllOy1jMLWmSt0SjaI5mFmg8UrmxrSzj9uH21NZr75wlvmdtDEg_PuBKZgfA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=Adq6GrevPbsel2bDttbP63XPEu9vpTYPVYCwxbEjaU6VsIEmR10OnLsjH_Nd0O_uOF4&ccb=10-5&oh=00_AQRvxmIT8D8tT3sEAQ88GsddumlrI1KNUCuqyizyiX2wYA&oe=6B2C1676&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 14.7,
+        "camera_coord": [
+          77.234173,
+          28.566847
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.228744,
+          28.547957
+        ]
+      },
+      "properties": {
+        "id": "MD-020",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "roadside gutter",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.359,
+        "est_dist_m": 15.7,
+        "bbox_norm": [
+          0.0013,
+          0.6147,
+          0.3208,
+          0.6831
+        ],
+        "image_id": "1127186004414197",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMmyY87gao1e-v4_F8GTw3a7cLHvu3vUdQLDUtC3MMEgUC_DX8Vydo1-qA5jvbKqHnHQ_ZkWXftkd3Qs5ouIxaymMcRBVuG6-eFZmU1IDvVD_q78BSV9la5GmqEf2LGpnxjwZhob0Nq0bderNHPfxCYwCSvAu1RdN3b0kKDtKsBzQ?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdqlnJgdVq1CNHgpN7lGcXYPckAeUNHITFZiJl5h_nwFuuXec9KdovoKqY62zL3wlpY&ccb=10-5&oh=00_AQR63udofBGXaSenh-KjgyacBYP-T37aRm5KwDpjRvupHg&oe=6B2BF219&_nc_sid=201bca",
+        "captured_date": "2019-07-22",
+        "compass_angle": 337.1,
+        "camera_coord": [
+          77.228864,
+          28.547863
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.234321,
+          28.541061
+        ]
+      },
+      "properties": {
+        "id": "MD-021",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.349,
+        "est_dist_m": 4.4,
+        "bbox_norm": [
+          0.7554,
+          0.752,
+          0.9966,
+          0.8838
+        ],
+        "image_id": "941789766618175",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQO6I7pewWXQt0fYP4MyQP-b9abvmMaBfnag6YxZ55jCLIq3b0QTFvyNYj9NZHG72P6Uih_2Wf1yPuI5ZkNsEzP0LPrkBGrCMsLR105RcL10lzIIonwpcto4E3kv-nUJB98fRoZsonWjNRcr4JkJVK_C0Xbtxdic2_7M3dzgLjcXuCQ?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdqCIVTP2MCXawInJPGVzATxBc5TZe21wxRVyOyLh5ORCCwntq1XWNy60gV1djegqOY&ccb=10-5&oh=00_AQSRrIh0Y07ak5rbvh3-kFgkUwC6lXLN3841VM9EzOOT2w&oe=6B2BFD1F&_nc_sid=201bca",
+        "captured_date": "2019-07-31",
+        "compass_angle": 108.8,
+        "camera_coord": [
+          77.23429,
+          28.54109
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.230476,
+          28.565951
+        ]
+      },
+      "properties": {
+        "id": "MD-022",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.347,
+        "est_dist_m": 13.0,
+        "bbox_norm": [
+          0.0017,
+          0.6113,
+          0.2981,
+          0.709
+        ],
+        "image_id": "298791655049262",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQNpLHq5KGNo-1XPsItgr3xvSkbue6G00QCqUPsmVlwGfWlyqzRK76pTkihSvwj6JTj8-BQLjMuxzXVfdY6DXWCrjyfM190wzddLqzJddGhf-LCSdCJB359G0zd1ov0fdKvVpC7mQ-hBWowsshxnisC7sz2gtYU-3eWSBlW3rxn8rQ?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=Adp4z53NJaaAdPv74Vo6hePE6o6hrDsW6mAVfS8cshDZpSRyTMLLZCC4o0c-dyl7J3k&ccb=10-5&oh=00_AQTl5C_hzeoMoIrwQQWIwmPbdOv2tKAG2JHX-jCu1hbJKA&oe=6B2C0917&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 122.4,
+        "camera_coord": [
+          77.230344,
+          28.565963
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.209305,
+          28.572532
+        ]
+      },
+      "properties": {
+        "id": "MD-023",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.342,
+        "est_dist_m": 10.1,
+        "bbox_norm": [
+          0.6543,
+          0.7271,
+          0.9971,
+          0.8706
+        ],
+        "image_id": "796565387638308",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQNTfOucKwVu2M_i_63vXAcLWNddPpzA0r6Hdx6XlNh6DO6hlcsezL0350OZu45GAtWyivDTJLDls3oZt5bGFuqjii0Qc-mMNttdYI0RmomHaFAMXXCwNFc0ZZSBbx-2Yo51KiWhdj8cTrHy02wWwwPuBG-qF348mTHlxDNmZXwTz9s?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdqHpXYPFC4aI-pW0T6_Zq1xlbiTtsfEfTi8AoBsixXX52FlTtAY66iOXGHvqCKYE14&ccb=10-5&oh=00_AQSKnUhIiPgKnW_ddLuqDZDEOL7O4jivPz3_5tS2A9OsKg&oe=6B2C1413&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 10.7,
+        "camera_coord": [
+          77.209246,
+          28.572457
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.208886,
+          28.570321
+        ]
+      },
+      "properties": {
+        "id": "MD-024",
+        "corridor": "AIIMS - South Extension",
+        "label": "manhole cover",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.34,
+        "est_dist_m": 12.0,
+        "bbox_norm": [
+          0.9082,
+          0.7646,
+          0.9443,
+          0.7852
+        ],
+        "image_id": "272834721256185",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQM7QUEijhOkHemMOZEzZ_s7xlUG4Z77EjHL0YqwWS2_rc2XmoJTh-v_iSGdeAIyorDeblh9IP0zSLBwtP-kw7O_VWryD5NPWfFejYIBaAmHLlW42fzaawjzUS46QyI4j2VwtDNuu8zC2Ahl5eaWGZlapEkzBaUGWYcppMpdsc-deA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdotF8RZXV_hO4kS1900krJKksPNfhZpY0TcfC-x0B1XNUMRB2b33771mBc-w0Re-VQ&ccb=10-5&oh=00_AQS92p4xZpJrlwGYFNsMUXb5c_oxsBPejuKGBMvaxYzhNQ&oe=6B2C121A&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 16.0,
+        "camera_coord": [
+          77.208794,
+          28.570249
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.208785,
+          28.570043
+        ]
+      },
+      "properties": {
+        "id": "MD-025",
+        "corridor": "AIIMS - South Extension",
+        "label": "flooded road puddle",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.339,
+        "est_dist_m": 11.6,
+        "bbox_norm": [
+          0.6826,
+          0.7417,
+          0.9971,
+          0.8735
+        ],
+        "image_id": "554176642233143",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMJ6WFdSGUPkWy-k-8BNqGIdQsTpYTnpWEl_4jODrlpTTGSY3nXRiEWZI1PLPbMH861OEIOmbYy2Jn19562QTOqTezv3RsvI1heUXBhD17efFLwU4x2rC4gAAACdTsyfudR_tlwO0oAr9irwP_ZP9QjxTNrcVw4Ahmf4UDTeT1MyQ?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdrT9JH9yn9kOBs-qR0rGlP0j_62kTAZQR51CcMCdNQUNNfuNP3CDYdd-g3Czb-b3bg&ccb=10-5&oh=00_AQTupdD9mhMlcWh1U0OjHMI53bfmeefgjNa1EQK5CKnyHQ&oe=6B2BEEB5&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 15.6,
+        "camera_coord": [
+          77.208707,
+          28.569964
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.235429,
+          28.569496
+        ]
+      },
+      "properties": {
+        "id": "MD-026",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.332,
+        "est_dist_m": 13.7,
+        "bbox_norm": [
+          0.447,
+          0.5625,
+          0.6428,
+          0.6449
+        ],
+        "image_id": "998061359437426",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQNOJQrAWkgVOVfbrn6h1REXUwCn01O2z_VXdZVzomHFDTDanZNTIjXfb4IUVvh165MO67Bx9g1mWx-qjCVp86JX8z2WSX7gTOyXgPaS43--t4Yx7Vo3tq98e1gL8zDfC4cy5FpCXWIhG43fB9N-FSW1CjjewMrbyh3QMDAvy8CbNQ?stp=s1024x512_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=Adon9l0RW2SxdazMipSXsw2px4YHPpKJ81-1gaHTq3STXH1xtIu_jpoob1Trj7GMSu8&ccb=10-5&oh=00_AQSYeWA3wS0b2BrNy4GJ9QK0aRepDuDAUFVWUqbprLm-aw&oe=6B2BEA02&_nc_sid=201bca",
+        "captured_date": "2026-06-09",
+        "compass_angle": 25.8,
+        "camera_coord": [
+          77.235354,
+          28.569392
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.23657,
+          28.540909
+        ]
+      },
+      "properties": {
+        "id": "MD-027",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "manhole cover",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.33,
+        "est_dist_m": 15.1,
+        "bbox_norm": [
+          0.2042,
+          0.6978,
+          0.2443,
+          0.7144
+        ],
+        "image_id": "1528000964060654",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQP2l12bxLPUBlq4ocTSnUMnDcG9-K89sXdwk98AJi1dyc2QjU8oh-sxUb8XCYtH9JVFYjKs5EzvI7nlda3PHNPabIEREYj7sq6JFkqURqStK4rzVH0XkjlT2cLxqTNTnADuJbMi34IoVtcthEwXwU0coDGXN-RdVvdzYFFVSV0jVA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdoGfJH0_uMK_hNjDsj7zSMuUPDCB7szKXwNkDRkbF3h6gT6SL-B1qebgML4lVMZvZc&ccb=10-5&oh=00_AQS7PVEnib7U0vvfDQ6psK9CMxodzhPRxFYdn14qFWfu4A&oe=6B2C1355&_nc_sid=201bca",
+        "captured_date": "2019-07-31",
+        "compass_angle": 76.9,
+        "camera_coord": [
+          77.236441,
+          28.540833
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.22948,
+          28.566341
+        ]
+      },
+      "properties": {
+        "id": "MD-028",
+        "corridor": "Defence Colony - Andrews Ganj",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.33,
+        "est_dist_m": 8.3,
+        "bbox_norm": [
+          0.0844,
+          0.7598,
+          0.4673,
+          0.9961
+        ],
+        "image_id": "326706928875063",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMgqsPdPLNNnVAEdPKJWzE1K-OxZAfgU1Tb0KngzDlolXgnDQC3--EVAldypGhSpw4vgLwDCio1esWXb4P5RBTCOhDKYiq9fwRp2W-m8Yrcjm1LvI9RFqS4_P0Jb2jb7nLkFz1jdvkQcRPiGxIoEKSt3R-9WLifNGxrR9ecpKhbWg?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=beJN_1Xl2BBCBDCxJXLn5g&_nc_oc=AdpS8wCojId7AxMBYkooWC2wVKrruho7JOpeqb6ntnJrV6lXujAx1WtoRAH80OXOXk0&ccb=10-5&oh=00_AQRO3kI8p6k0fiHR9OTNgNB2oM9fDhV-tRJyMDSeKbRz2g&oe=6B2C093A&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 123.7,
+        "camera_coord": [
+          77.229398,
+          28.566362
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.22997,
+          28.566132
+        ]
+      },
+      "properties": {
+        "id": "MD-029",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.327,
+        "est_dist_m": 10.3,
+        "bbox_norm": [
+          0.0018,
+          0.6821,
+          0.395,
+          0.8706
+        ],
+        "image_id": "4007733479306114",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQPv5I51fYOwEAhwrW-gracJ4xetDi0xOrSMuTi3B5alkagwUQBGzk85kSOBxTprDbXW4HuPoJyRAQ04-4rumunbWkOwTavJfY12Khqw7xAEiB3qpZrswvBAnqzbdAYZkz9ZU3BmQuxJYKP4kHrHR5_C3RSsUnAtTBMUf-fZMBGB_A?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=AdpD0a8hs2mH0W0qr7s5a3JJPcrSBXmr5wPJQvXPXtPoFPoycVtXvc-NCDUbDvfrzB4&ccb=10-5&oh=00_AQSj3t3e2H6xwFp4vCAlW07l5mdT5Qj-ofbjqEJSS2v5Ew&oe=6B2BFB6F&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 126.8,
+        "camera_coord": [
+          77.229868,
+          28.566155
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.209232,
+          28.572162
+        ]
+      },
+      "properties": {
+        "id": "MD-030",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.327,
+        "est_dist_m": 10.4,
+        "bbox_norm": [
+          0.6519,
+          0.73,
+          0.9976,
+          0.8843
+        ],
+        "image_id": "1390227061334281",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQOQlwPcKoxikP7ACcHIM6WDyGTaqv8a4AK4Re3NE_eoTU5Okkrt5Epl6As7US1Z9GFYq2uK_EpbVNowykhnZsY6HtuB7qWCVamMAhosO6wCpTsLcEL2DiD4M-8PsyuJe8wO0iOFm2ZkFV5VvNiLMxiUhzw9VoZRVNYZ1bPDixXpfQ?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdongfvOrNctRC99grDrwBKkKUTenaQmULDRtSETR_t3DsGm6ozTlebckm1KaebRSzQ&ccb=10-5&oh=00_AQQ0vuaXDyFTkMHu5TofSMU0dJFOuDRB92N9U9FzPvHpHQ&oe=6B2BFB72&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 9.9,
+        "camera_coord": [
+          77.209173,
+          28.572084
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.234454,
+          28.567703
+        ]
+      },
+      "properties": {
+        "id": "MD-031",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.316,
+        "est_dist_m": 12.2,
+        "bbox_norm": [
+          0.6572,
+          0.5781,
+          0.998,
+          0.6934
+        ],
+        "image_id": "493114345357459",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMIcuRAysb7QqP13ekt2hUJlL63YOFEJTqcQqwSplwMNfkp0vNksiU2d50lVk347WGpbTa-W8pCpLiXy1c2qb-zoEEmPdWHV1WEI9bH0qgNlxuWPGWiFYKfflKKlvQU7R6FL4zpjzcGH14nWS6KYwqQimgDwoaH94z0IWUlGHqVKA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=Adq43kIRIRpWZ-odIozwyAORV90K-ukfO4aHvSeg6WPcgNNLZBjndb3rnb6pfmlF90Y&ccb=10-5&oh=00_AQQReUTvVbBsrA6rS85hmSZQQra4FkUHyUH61qgmPfZ2Fg&oe=6B2BF434&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 23.6,
+        "camera_coord": [
+          77.234361,
+          28.56763
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.223106,
+          28.565152
+        ]
+      },
+      "properties": {
+        "id": "MD-032",
+        "corridor": "AIIMS - South Extension",
+        "label": "road puddle",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.309,
+        "est_dist_m": 5.6,
+        "bbox_norm": [
+          0.6201,
+          0.667,
+          0.9971,
+          0.9668
+        ],
+        "image_id": "2911138512457346",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQNsMac9q3MQJnKATgGuNPR_VVJsWIDim_-Emz5WnO0FvlX1Zp1pjalI4IbtWTXlkFTj5rbcx49YSlzdyoCVYW7Ddtm8LB_Z_C9HctrGQM3V6-s3O_YCBPP58bYkHsPHv1Sk7EHaAAE4hNiIpUhkjmPX7dKExerioWoOoHJMC6jITyk?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdqKQItyfHxDNK_hr2pdlFE8MKL8J-jvnnmPYN-_MHex2klHjEuFvE9ibt4yTBFjxhc&ccb=10-5&oh=00_AQQ8iOxOYE0deTfpskBY5iR4AlJF4DiFqvgAonhuNvFtGw&oe=6B2C0EEA&_nc_sid=201bca",
+        "captured_date": "2019-05-21",
+        "compass_angle": 224.7,
+        "camera_coord": [
+          77.223159,
+          28.565171
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.208198,
+          28.56876
+        ]
+      },
+      "properties": {
+        "id": "MD-033",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.309,
+        "est_dist_m": 11.0,
+        "bbox_norm": [
+          0.0024,
+          0.7192,
+          0.4893,
+          0.8472
+        ],
+        "image_id": "804331796878578",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQO073xk68-7LkrKUQdzFjA1mGJrG0MFlpPPgxD8Sq-7nOF1Dr89U2hH2o6xOTY4UOOE8YunYA5t0oUxvjW5PEF0zFxLxxdwyRKSSumTCFsb2l8iz60KMRkQW1ovUTJq6MkIXMHFa5yCarfqIJ7EsvON2E_3NCnhr64qdWjqqXvq-Q?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=Ado3CT_IbvtHFAQwobS-gbiw2i23CJBHneFEBjjy6PYfw6LDQNAWkMkfmDp3XN13Gu8&ccb=10-5&oh=00_AQS5cXwobtxWYstnCDA4XAuPRHd017BUcAnQEb17dtlXEA&oe=6B2C1252&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 17.5,
+        "camera_coord": [
+          77.208201,
+          28.568661
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.233831,
+          28.541204
+        ]
+      },
+      "properties": {
+        "id": "MD-034",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.308,
+        "est_dist_m": 6.5,
+        "bbox_norm": [
+          0.6885,
+          0.6948,
+          0.9971,
+          0.8413
+        ],
+        "image_id": "222457772660775",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMqTM59h4fuykTIsRmDCiDXceDLPWSyYtUrBOzbfXd_VQrfE6xbowB3URdAY22U4tzgEAomn4QZ_HUeq-rbvhOHXGQE-VTlZmz0MvOR66QqeZCyU0c2hLx5sxWi3Ic_d_K7ypHpMueDpqFyIhzDZQO90fHrFllH1F_ZQ_HeL60GUA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdrwT4E-i0FRpizdqKsFy1pl2vJ7Br7yf5yEofpM6IFa-HtbV56VT_oDxrJIyKR8ozU&ccb=10-5&oh=00_AQQ9tnLryZg5aSGaNgaINeUR7V7noAB8Kvl9m7Aqi9D9fg&oe=6B2C1927&_nc_sid=201bca",
+        "captured_date": "2019-07-31",
+        "compass_angle": 112.5,
+        "camera_coord": [
+          77.233787,
+          28.541247
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.236245,
+          28.540786
+        ]
+      },
+      "properties": {
+        "id": "MD-035",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.305,
+        "est_dist_m": 3.8,
+        "bbox_norm": [
+          0.8389,
+          0.7046,
+          0.9971,
+          0.8188
+        ],
+        "image_id": "519233665784843",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQNhrtUR7RJHDaFVFUstj6LU4dEHrhu-hrQPc9kwfCEtMD4mVsx3YOTFMJ6cnK1i31c8wjErhFbnuoLHDvJt3wNnmyJ3g4DZguf48qmh0qGHQTTHWG4-8wFHYlVVMmfy683ePLVqrjYROgBjixHbpZcQVQ6bqpV2ZYs5UF_UJ38Xrw?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdqRflwdnxO64XTeznPpTWYcZ27am-LDj4kSJb6rhCSekIKiUsTCi0NgJb6kckv9TYs&ccb=10-5&oh=00_AQSx2pZ1nBLPL2QQPIFJajioQKaW77AtUuj_DjunHQH-_A&oe=6B2C1AF7&_nc_sid=201bca",
+        "captured_date": "2019-07-31",
+        "compass_angle": 81.7,
+        "camera_coord": [
+          77.236209,
+          28.5408
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.230155,
+          28.566034
+        ]
+      },
+      "properties": {
+        "id": "MD-036",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "manhole cover",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.303,
+        "est_dist_m": 5.3,
+        "bbox_norm": [
+          0.0014,
+          0.8574,
+          0.08,
+          0.9229
+        ],
+        "image_id": "809608336428647",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQPCRPA0sScNiCsUmrmiWbIDFbTYzqkX0chzIpI2uFhZFC9c-qHv2sWtW8khmyjcvs7-5vlmIv8yNKHh08QOrwQZx6pZws3WMUCNr8dwsYCWOwjd_GipBglse4D6vy-VNZ_PCwVZ1D4nvbIV7G0-KdeMmiszMsJ8RN0Kz_7e3vIYTjc?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=Ado_XZUTYqYne0vJS3GE950XfdIRjsNlIkyRwiBQQr6z0GSWsgDmGFptYrPgH5uSIbY&ccb=10-5&oh=00_AQQIrCVfRdUEd0ag8N4ye0AgAbmsCa_b_h-VS93xXpwoxQ&oe=6B2C1EF7&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 128.9,
+        "camera_coord": [
+          77.230101,
+          28.566038
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.232681,
+          28.563257
+        ]
+      },
+      "properties": {
+        "id": "MD-037",
+        "corridor": "Defence Colony - Andrews Ganj",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.303,
+        "est_dist_m": 7.7,
+        "bbox_norm": [
+          0.0021,
+          0.6436,
+          0.271,
+          0.9902
+        ],
+        "image_id": "297079585392261",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMX-rG1d3Xry4g3gT6pwDDSq3g21JGkfMJn4QRz3Mdo7Av4o8EAsrW8wqVOMkjorF6th7aiwdTVPXaYBTLRupXwRqj3ezKatvNO-xo3lsbEg214fgxz7kwwQCTHT4R5ce_zeWBBlZFLxZ85_apXGxQk8PpwGq8yyE654auAfqBDrg?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=beJN_1Xl2BBCBDCxJXLn5g&_nc_oc=AdoOg7TTMXDtWeUkS62DMyuK3xyIrS-t1jW2GtRRWGHH8JLCo1nQWdOY0NUK6tgcPUc&ccb=10-5&oh=00_AQS-WfcDr3YSiPiMszChtpwN9AEodB9tHiLiiEueByuovQ&oe=6B2C139F&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 250.0,
+        "camera_coord": [
+          77.232734,
+          28.563307
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.234429,
+          28.541106
+        ]
+      },
+      "properties": {
+        "id": "MD-038",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "##ged drain",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.299,
+        "est_dist_m": 13.7,
+        "bbox_norm": [
+          0.0872,
+          0.7954,
+          0.2124,
+          0.8823
+        ],
+        "image_id": "941789766618175",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQO6I7pewWXQt0fYP4MyQP-b9abvmMaBfnag6YxZ55jCLIq3b0QTFvyNYj9NZHG72P6Uih_2Wf1yPuI5ZkNsEzP0LPrkBGrCMsLR105RcL10lzIIonwpcto4E3kv-nUJB98fRoZsonWjNRcr4JkJVK_C0Xbtxdic2_7M3dzgLjcXuCQ?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdqCIVTP2MCXawInJPGVzATxBc5TZe21wxRVyOyLh5ORCCwntq1XWNy60gV1djegqOY&ccb=10-5&oh=00_AQSRrIh0Y07ak5rbvh3-kFgkUwC6lXLN3841VM9EzOOT2w&oe=6B2BFD1F&_nc_sid=201bca",
+        "captured_date": "2019-07-31",
+        "compass_angle": 108.8,
+        "camera_coord": [
+          77.23429,
+          28.54109
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.228542,
+          28.548556
+        ]
+      },
+      "properties": {
+        "id": "MD-039",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "drain manhole cover",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.298,
+        "est_dist_m": 15.5,
+        "bbox_norm": [
+          0.3362,
+          0.6348,
+          0.4104,
+          0.6738
+        ],
+        "image_id": "176026927742362",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQPZYq0-sGAyC1J_XX1QiL-UEypqhrkll9uyc5rG08UeglWOXUvI-iyu5FrtizWbGFp6cVJGgQgVdpIm5ao0704KIMsQGs7t8HRgVxPvaqSQuzdXaDhFit5r7zf1Iq5LD_U2MmuFS3BbboeGzh8XiFxNvERzqmIk4vYwFOT2dSgmIA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdpN5B96-vFjuJLSoqiA9MBC4XLcMNci1tr11EiNnyPSPHJYfvGdGap0SBjiJvveqDk&ccb=10-5&oh=00_AQQXsp-qu8uIxCMoirI-bQsTKiQgGe6DWwALNiw0GrhZOA&oe=6B2BF977&_nc_sid=201bca",
+        "captured_date": "2019-07-22",
+        "compass_angle": 343.2,
+        "camera_coord": [
+          77.228612,
+          28.548431
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.229035,
+          28.541835
+        ]
+      },
+      "properties": {
+        "id": "MD-040",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "road puddle",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.296,
+        "est_dist_m": 5.2,
+        "bbox_norm": [
+          0.3584,
+          0.6221,
+          0.9932,
+          0.9922
+        ],
+        "image_id": "1160860555134640",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQNb6vApI-VksDAyzAXT3_R_CCKkZwntmtXUUsL4b8dzDegH-DAnFxjaHqenIk-mruVJXXctQZCvu1qCd_UhWVDfHNIRG-8h3PNkXURcrKUkQ1OweasuToVT7n5K-dQlNwyhSJcmyTt40TMFNwRyOouqvDdp6wmtnwjzvX_RTXdX8iU?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdrImAdfxFM4R37F2PqrmOrGPD1hOAgBSaK3KoKEe3Pa9K6sqLa-cARZwFkk1_gdljY&ccb=10-5&oh=00_AQQV_4AjpdjBF2m6lVf5A_cgeAuSrWLZqRDqJyOKLlIFPA&oe=6B2C0D41&_nc_sid=201bca",
+        "captured_date": "2024-07-28",
+        "compass_angle": 148.0,
+        "camera_coord": [
+          77.229017,
+          28.541879
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.234142,
+          28.54116
+        ]
+      },
+      "properties": {
+        "id": "MD-041",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "drain manhole cover",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.295,
+        "est_dist_m": 13.9,
+        "bbox_norm": [
+          0.3008,
+          0.7197,
+          0.3857,
+          0.8096
+        ],
+        "image_id": "381090916534098",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQO2XP3afmqjjQSByB6U3otH9GHKl4IdBq-3mw04FQk8-VYP5Ol8yWel89ELzYPjxkBHCMai6sOKApU_Db2n6SVz-ieE_4XczPeTMquWq_CqaJFKUCstGTfOb9F816uCN6Uq32vuRbS4b6gDS1EFsWpSoKI0iMMelrZwsu3pyIVUnA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=Adp8bnL6SblmA1SvBkbFqtICQtQaklmWeR4WeiEHNlL4dcdbAN_Ev3vCv3EwW83V4YA&ccb=10-5&oh=00_AQSX1VV9To4X0FJf_NT9latsTta9pnneSTUIu90l-KLK4g&oe=6B2C070A&_nc_sid=201bca",
+        "captured_date": "2019-07-31",
+        "compass_angle": 109.1,
+        "camera_coord": [
+          77.234001,
+          28.541176
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.228751,
+          28.548194
+        ]
+      },
+      "properties": {
+        "id": "MD-042",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "flooded road puddle",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.294,
+        "est_dist_m": 15.5,
+        "bbox_norm": [
+          0.54,
+          0.688,
+          0.8438,
+          0.7485
+        ],
+        "image_id": "1420300191683733",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQN1gnfMeH6U6JiamqUXRFoKbBv7GslLzB3j7CqVvcNfZfPjLSfF2iTW1jIyyat5O4jTZ5jYQce3ZjzIG-1JPLQVac6TUJniVY_Y201FvfgfMWhPHlgDqsFssJ1ozg_i66NIqGZOuPqizinGHEFiHo9HPE5WgTzISUbPgtTdBYW9vg?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdqOkyuw7AUr0w4jHradT7bpXjtFENY3ilCtBN2HWH38gG4riPVMJIU7Xdy94W98zHM&ccb=10-5&oh=00_AQRbuC6WyEZ5-E1ql7emRTCehLhnsCxRpIcLc9cCgNnNHA&oe=6B2C167C&_nc_sid=201bca",
+        "captured_date": "2019-07-22",
+        "compass_angle": 338.2,
+        "camera_coord": [
+          77.228772,
+          28.548055
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.208434,
+          28.569333
+        ]
+      },
+      "properties": {
+        "id": "MD-043",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.293,
+        "est_dist_m": 13.4,
+        "bbox_norm": [
+          0.1572,
+          0.7339,
+          0.354,
+          0.8149
+        ],
+        "image_id": "3605176663040692",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMpPMMs1F5AUm8z9iDCt2t4s1jMBJ3q94WYPTFDViZgZZ-2vH0eb3C170bdgPheE9emCLgAEYZl_Hl1zAAZ7wVdSgpOKePxubk3v_QAyoePkzQ27uk0LvRL1JIUU4tD_cHfga9MDzTmkLPiLJJQbyQ-xeODcg9l-wwI0tB-ZBxY2g?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdqI43pEZCLlapbOjFATYTlYmg5AmWVskRtiQTW2-wyf6EGl8WqmuVfgkoULr-vC9Hw&ccb=10-5&oh=00_AQQxQ5QrVU2s0DZOF7onpbrG05Hr9EGsDQtmKangXexXag&oe=6B2BF7C7&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 21.6,
+        "camera_coord": [
+          77.208427,
+          28.569212
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.208949,
+          28.570622
+        ]
+      },
+      "properties": {
+        "id": "MD-044",
+        "corridor": "AIIMS - South Extension",
+        "label": "flooded road puddle",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.292,
+        "est_dist_m": 12.8,
+        "bbox_norm": [
+          0.7012,
+          0.7266,
+          0.9971,
+          0.8584
+        ],
+        "image_id": "2811465285774790",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQP5XIj6l5xAFK9eEVbEkalPQrdZftSVa80eV-wmuIG55x_ok3ZmKSJRvdpQHRY4M7EOhRirH36PmLUk6VjPSMbA-S3DM-FjlsDQPrLZyi2gOuHRQOUtxXIlSd8-yccPLDfaPgpI3g1WFmfVV0QU9zGWh5LHIuERXphdvpIBHboLQQ?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdonuaeudPWyC9HWemLlizeUZL7Ly_a-qNuhosfZsTCEbCgFpWxmaQlWshLFU3RIGWM&ccb=10-5&oh=00_AQSQ4ktpknAWvo97B_0hyVQ8BXgqyiP1N39H1qefGKBcmA&oe=6B2C1FEA&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 13.4,
+        "camera_coord": [
+          77.208866,
+          28.570534
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.232873,
+          28.563378
+        ]
+      },
+      "properties": {
+        "id": "MD-045",
+        "corridor": "Defence Colony - Andrews Ganj",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.291,
+        "est_dist_m": 14.3,
+        "bbox_norm": [
+          0.5381,
+          0.5288,
+          0.9131,
+          0.6284
+        ],
+        "image_id": "473913880521682",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQNxU_Cjpv7kGD7AU-vjZHvLkc6_XvSQM-4Lsq2V1c0YxZ5lH1zeQwHpizV2sgn_eoqJN7-NZQDEHQpK4eX9X16u3TJuXg4dof8EfCQD7fSzz8ltbTfxGVADj79m1706HTalYjZX4dmV5HAKbmp-hnEo3YT01cFAC15ORBNiS_vRpw?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=beJN_1Xl2BBCBDCxJXLn5g&_nc_oc=Adob-VFda91o8JPWlKIT_mRILZH5ThXjyYW1saSYzKPpMksW_S0FuGbsX5oNzWjHDKY&ccb=10-5&oh=00_AQR7bLyKHxC3L2XvLeVRgSem3W0yXGG0LuvkGK5Dgx4oSQ&oe=6B2BF38A&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 140.3,
+        "camera_coord": [
+          77.232817,
+          28.563496
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.236922,
+          28.540951
+        ]
+      },
+      "properties": {
+        "id": "MD-046",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "drainage grate clogged drain",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.288,
+        "est_dist_m": 11.1,
+        "bbox_norm": [
+          0.6226,
+          0.8721,
+          0.7163,
+          0.9951
+        ],
+        "image_id": "1233838030368692",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMa6lamNXQtPZXAaDZuxnEDEPI_tz6L7SvlLCcolHvmCRAZgLYH91eUalBQYgtl8EFgagNealBza99UmwiLFEXD-bjsLvPsdFtAoJlPEzkF5V2pLPAPYFR_D7V9D0AnEUWmz2B6r5Ux6J0-DvwrzPTNvc39IyUaUq6yrIgPUInqEw?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdolTHO8_I5-gL_ThoWminNK5Al2Pmezp179E_AMrkVkUpdhkdonkEEuy4E8ZZTEBew&ccb=10-5&oh=00_AQTpITpyoMYwG0ayo1-yVVYO3sKiOv5oeZCBQhgm2kYRdA&oe=6B2BF009&_nc_sid=201bca",
+        "captured_date": "2019-07-31",
+        "compass_angle": 69.0,
+        "camera_coord": [
+          77.23681,
+          28.540936
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.233533,
+          28.565732
+        ]
+      },
+      "properties": {
+        "id": "MD-047",
+        "corridor": "Defence Colony - Andrews Ganj",
+        "label": "drain manhole cover",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.287,
+        "est_dist_m": 12.8,
+        "bbox_norm": [
+          0.1188,
+          0.644,
+          0.1908,
+          0.6675
+        ],
+        "image_id": "211532673898640",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMmo8jEIVc_QD3YyGzEEvDnz6vu8qrwMWf9CrywJIHV3cpfh7Gdgyb3HWO5lRMm6l-li4y1vuby46UgdBq4EqZaZIrHJ_rebRfs5POH3z9hSiLwDa_Dfktmj5LSjto4fLTXRdwJHYMj0kwYh0v-yHIZ9uW72OZdqDIAe4grcD06cM8?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=beJN_1Xl2BBCBDCxJXLn5g&_nc_oc=Ado7ZbPMbpbNPkHZdDIsHZfYKsGPNDolRNJabbuzz7H9XXZMBntVIpUIyTzI0PGh7HM&ccb=10-5&oh=00_AQS1FZXDQBxnr4aEF7dX7BuqCu4cQ6jy5OHzoZCGroqLxA&oe=6B2BEADA&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 253.5,
+        "camera_coord": [
+          77.23363,
+          28.56581
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.208593,
+          28.569559
+        ]
+      },
+      "properties": {
+        "id": "MD-048",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.287,
+        "est_dist_m": 15.2,
+        "bbox_norm": [
+          0.3279,
+          0.665,
+          0.9229,
+          0.7188
+        ],
+        "image_id": "617638476298981",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQP-ueN6cSEDxcJbXvvWMsVDTEFHhJ8lm5QJHME9FVZalPqHevigKtnaLJgXk1vRXoSXZrtpS_VK1V1Y41XvIdvHfQD2F_mzBvpMc49taJYFzDOP3QRbyoZ7x6rLRZOV8Wg_HpVwgbNp7UE66Zx3D9bYAu9jYh76agxCLs21s0UMnQ?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdqPIPSx2XNvOULRfLQk1F5bat0g7Ouf218xO91rXnBElQhDCYGryLuzO4Cyu9-ouhQ&ccb=10-5&oh=00_AQTeVOfUQTnqEyMCDfMyNpgIu0rf3nARQPJcTKpHQEx6gg&oe=6B2C0DE3&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 20.0,
+        "camera_coord": [
+          77.208516,
+          28.56944
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.208543,
+          28.569294
+        ]
+      },
+      "properties": {
+        "id": "MD-049",
+        "corridor": "AIIMS - South Extension",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.287,
+        "est_dist_m": 14.5,
+        "bbox_norm": [
+          0.7969,
+          0.728,
+          0.998,
+          0.7886
+        ],
+        "image_id": "3605176663040692",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMpPMMs1F5AUm8z9iDCt2t4s1jMBJ3q94WYPTFDViZgZZ-2vH0eb3C170bdgPheE9emCLgAEYZl_Hl1zAAZ7wVdSgpOKePxubk3v_QAyoePkzQ27uk0LvRL1JIUU4tD_cHfga9MDzTmkLPiLJJQbyQ-xeODcg9l-wwI0tB-ZBxY2g?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdqI43pEZCLlapbOjFATYTlYmg5AmWVskRtiQTW2-wyf6EGl8WqmuVfgkoULr-vC9Hw&ccb=10-5&oh=00_AQQxQ5QrVU2s0DZOF7onpbrG05Hr9EGsDQtmKangXexXag&oe=6B2BF7C7&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 21.6,
+        "camera_coord": [
+          77.208427,
+          28.569212
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.235528,
+          28.569684
+        ]
+      },
+      "properties": {
+        "id": "MD-050",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "drainage grate clged drainhole cover",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.285,
+        "est_dist_m": 10.8,
+        "bbox_norm": [
+          0.5442,
+          0.7211,
+          0.6008,
+          0.7831
+        ],
+        "image_id": "962979369887333",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQPbLNfh5XjUbaeJnoJX3B4SqTfQ__bHYeKvRP8PqFAK9bh0dAWp8KT00W0fn-tqo7a2sXniQWl3-KB2cSAGBpAVnSaSxu8rKkkd_Gs_Jov6-IdNFWli3VuhAlUFMZU2CsVpQJa7h2jwp34tmmrE781ac90Pw1HeebvcxkR68O9JQCs?stp=s1024x512_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=AdoxvI707Cl_lEcfqNVytvItaoEFGP-onStLLFxkSkPxxCxqRbPsn69PWCfI_d9j3lk&ccb=10-5&oh=00_AQTBgCtBC7RrXnCLKA-pE0j4aURw1Pz6zFSie8bm6nytAg&oe=6B2C1D16&_nc_sid=201bca",
+        "captured_date": "2026-06-09",
+        "compass_angle": 21.7,
+        "camera_coord": [
+          77.235469,
+          28.569602
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.223946,
+          28.567165
+        ]
+      },
+      "properties": {
+        "id": "MD-051",
+        "corridor": "Defence Colony - Andrews Ganj",
+        "label": "roadside gutter",
+        "condition": "silted",
+        "condition_note": "Potential silt/debris accumulation obscuring grate slots (needs field check)",
+        "confidence": 0.277,
+        "est_dist_m": 12.3,
+        "bbox_norm": [
+          0.4546,
+          0.417,
+          0.9976,
+          0.6211
+        ],
+        "image_id": "467496640997786",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQPsvbeZpLfdele4_saUAcCi2RrD9DRuLSKrl9h6L5kRsWOALVORMDDEqtR0V0NnxlFhlFAHeKZN-5gioU0P9uoYRAtuFwGn-JBWqLLdEnzEPS1oEHabcCv6ZR_5iTKTzSFpv-MIzj6Ex0XEynyalOxPGohFq-4qzKCaVQYRCE9U0w?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=beJN_1Xl2BBCBDCxJXLn5g&_nc_oc=AdqinlOnD2SuxZKrJP9YDW7bWP7QKg96vcHO9ph6CifaIcLxF9bz7xpoBCBCs8CmhuA&ccb=10-5&oh=00_AQQPMvBLctRaZEZ5ZbxAdE3qRp_XBiYUoF3eBvI6z7VpIA&oe=6B2BFE30&_nc_sid=201bca",
+        "captured_date": "2019-05-21",
+        "compass_angle": 215.3,
+        "camera_coord": [
+          77.224045,
+          28.567232
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.232854,
+          28.563589
+        ]
+      },
+      "properties": {
+        "id": "MD-052",
+        "corridor": "Defence Colony - Andrews Ganj",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.275,
+        "est_dist_m": 14.4,
+        "bbox_norm": [
+          0.4546,
+          0.5171,
+          0.9976,
+          0.6333
+        ],
+        "image_id": "329818638479481",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQOad1Y3Ill0eMxd_q3XLClZPKKMbvw5dtGNcnetKufw_z5Ms41EYt3qbB_sZcJMLi8HsJJqZxBUeCGjvawM8GwgzIw2NCC5qFKUk5xL98hh-9SjC8v4_FqmCXmyP5TjZcyWlzv5n8lNeVyaF9xDWN6iYJmYF-gYi9-gUyLi4RazQw?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=beJN_1Xl2BBCBDCxJXLn5g&_nc_oc=AdriKXXvllyK86BFARy0hfC5V5tH-LIhri1gQfWcg_acHVODyIKzLJjGam8ubQwnTmQ&ccb=10-5&oh=00_AQTSGfc5vMr7igeHCHtbR3aCBdrn3HRrzNpgMcOKYO-hPg&oe=6B2BECBB&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 188.1,
+        "camera_coord": [
+          77.232916,
+          28.563707
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.232922,
+          28.563799
+        ]
+      },
+      "properties": {
+        "id": "MD-053",
+        "corridor": "Moolchand - Lajpat Nagar",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.27,
+        "est_dist_m": 14.2,
+        "bbox_norm": [
+          0.4597,
+          0.5034,
+          0.9971,
+          0.5991
+        ],
+        "image_id": "457069828721748",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQMSSVLso3EBvaaOqPQ5mOXmNEbPkdJzAg1aepoMCDEJBcDwBpEWOQZrHkIUxEhFAt47REueflQX4DmWb0oZFPNTWp1DhPptXEoKsF585a-RWnWday4Qoxn1gW_uh5taoQlRYDD6I2bGqHaxCdgcG0v3Voi7MZTDbz8qsHcKHmpk0Q?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=a1oPjiBIkGyM0we2969vgg&_nc_oc=AdpQLx-Yn8czN-J2lRtPwfco2h2p_UtQx7ipSNM8A2xE8nM-AdMDAncXVkHkZ5gBaxI&ccb=10-5&oh=00_AQQZfCkrSDjElrwe_8VSthUO77E5Yao32SF41HC2xuoe-w&oe=6B2C0E92&_nc_sid=201bca",
+        "captured_date": "2019-06-06",
+        "compass_angle": 184.7,
+        "camera_coord": [
+          77.232976,
+          28.563917
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.238443,
+          28.541587
+        ]
+      },
+      "properties": {
+        "id": "MD-054",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "drain manhole cover",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.269,
+        "est_dist_m": 14.8,
+        "bbox_norm": [
+          0.2993,
+          0.7266,
+          0.3442,
+          0.749
+        ],
+        "image_id": "2975489052733850",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQM5ggXV731k6i4k_wwS1pB9VFtmO4RsW22qj86MNkBLgpmH3dl-8vcj-3I-OtLWTxISB8AMs2JDvSGl-8yU_ipsqqIFl134fkRc_gBN4O5lYcD3c4CM-XGvisXi-VJUTkfWtwK__qaGUoU6JHdxqMrbSVjLE1izRtTJtIVNHAiqIng?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdqbpHGn0EnavJNt7kYla9ZeNBv7qRdPqM-4EA7Dowqe2Qqsy-keBQSIc_Z28DCcBLE&ccb=10-5&oh=00_AQQ-cNrnzdIB2ktcYNx6xMOHZ4ENYJpcjrbCA9FA7edmNw&oe=6B2BF9BA&_nc_sid=201bca",
+        "captured_date": "2019-07-31",
+        "compass_angle": 68.4,
+        "camera_coord": [
+          77.238319,
+          28.541511
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.23589,
+          28.540747
+        ]
+      },
+      "properties": {
+        "id": "MD-055",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.267,
+        "est_dist_m": 3.5,
+        "bbox_norm": [
+          0.8394,
+          0.7607,
+          0.9976,
+          0.8721
+        ],
+        "image_id": "223627292528466",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQM8ncYt6wLg0UH6kLVtP2TWhPZOoVd1yvCEd2wGVc5JwO2dkBo171veQZVJ3BlbSwp9Zq19vig6Hl6F5eZ2hEQP6MryDtudIRvbTMzb8jns7_JfPeFtr8eHUJifrnR4QFmb0mxlMCtdBv8rkfUHQkeRBtAc5f_pQuEQE7PIYr5ku0w?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=AdrHJbDZ5O5KVVjwb_viuW6ccrJVWXWFtZVghgPEDErJiCebqi5MO9uFbDTDu74ISRw&ccb=10-5&oh=00_AQQpBXGAg_TIV1heoBgFLzFJmV2zVaRy5KnuwEqxryuNXg&oe=6B2C04E2&_nc_sid=201bca",
+        "captured_date": "2019-07-31",
+        "compass_angle": 89.5,
+        "camera_coord": [
+          77.235859,
+          28.540763
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.208644,
+          28.569799
+        ]
+      },
+      "properties": {
+        "id": "MD-056",
+        "corridor": "AIIMS - South Extension",
+        "label": "road puddle",
+        "condition": "blocked",
+        "condition_note": "Standing water or visible blockage at kerbside inlet",
+        "confidence": 0.267,
+        "est_dist_m": 12.0,
+        "bbox_norm": [
+          0.1311,
+          0.7217,
+          0.501,
+          0.834
+        ],
+        "image_id": "138678311576140",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQPhF2-UrKXtgIBg3JxqoTusAIvOsisb3bRPayG1yC7UU6zWirV1003uPsbRPfD9lsXAnegiGT5_YVf00Nvhvl0wi_0Trk5i2GQlmQ7N4faG3blCYJcaGtJU0t9GlQtJ28lAn7N5Of4jundjQoz7MMw6iDEeYM-szSoZNDD4kELxFA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=vaqN4wvvd9dw5WsVXELIfg&_nc_oc=AdoFgQeBYRVjCXuO8WcbMYfMivAk9fbJJmM0ZuUHIvHRS8ha857IvvcWpgV3OqDZ8SU&ccb=10-5&oh=00_AQQkN2P0hQNcqbGgUQuC1REwZJYcgGKwQsrRMk05lgIZEQ&oe=6B2BEA55&_nc_sid=201bca",
+        "captured_date": "2016-05-11",
+        "compass_angle": 22.0,
+        "camera_coord": [
+          77.208626,
+          28.569692
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.234036,
+          28.541139
+        ]
+      },
+      "properties": {
+        "id": "MD-057",
+        "corridor": "Chirag Delhi - Nehru Place",
+        "label": "roadside gutter",
+        "condition": "clear",
+        "condition_note": "Visible kerbside storm grate / drainage cover",
+        "confidence": 0.263,
+        "est_dist_m": 5.3,
+        "bbox_norm": [
+          0.8169,
+          0.6929,
+          0.9976,
+          0.7983
+        ],
+        "image_id": "381090916534098",
+        "thumb_url": "https://scontent-ams2-1.xx.fbcdn.net/m1/v/t6/AQO2XP3afmqjjQSByB6U3otH9GHKl4IdBq-3mw04FQk8-VYP5Ol8yWel89ELzYPjxkBHCMai6sOKApU_Db2n6SVz-ieE_4XczPeTMquWq_CqaJFKUCstGTfOb9F816uCN6Uq32vuRbS4b6gDS1EFsWpSoKI0iMMelrZwsu3pyIVUnA?stp=s1024x768_tt6&edm=AOnQwmMEAAAA&_nc_gid=-1tEZ41gzU5sXF9pQC7sPw&_nc_oc=Adp8bnL6SblmA1SvBkbFqtICQtQaklmWeR4WeiEHNlL4dcdbAN_Ev3vCv3EwW83V4YA&ccb=10-5&oh=00_AQSX1VV9To4X0FJf_NT9latsTta9pnneSTUIu90l-KLK4g&oe=6B2C070A&_nc_sid=201bca",
+        "captured_date": "2019-07-31",
+        "compass_angle": 109.1,
+        "camera_coord": [
+          77.234001,
+          28.541176
+        ],
+        "detector": "Grounding-DINO-Tiny + Depth-Anything-V2-Small",
+        "sightings": 1
+      }
+    }
+  ]
+}
