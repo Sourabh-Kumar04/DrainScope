@@ -192,10 +192,31 @@ export default function CatchmentWorkspace() {
     qs.set("nbs", String(nbsPct));
     if (parkDetention) qs.set("park", "1");
     if (selectedZoneId) qs.set("zone", selectedZoneId);
-    const url = `${window.location.origin}/workspace?${qs.toString()}`;
-    navigator.clipboard?.writeText(url).catch(() => {});
+    const relativeUrl = `/workspace?${qs.toString()}`;
+    const fullUrl = `${window.location.origin}${relativeUrl}`;
+    try {
+      window.history.replaceState(null, "", relativeUrl);
+    } catch {
+      // ignore history errors
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(fullUrl).catch(() => {});
+    } else {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = fullUrl;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      } catch {
+        // ignore fallback errors
+      }
+    }
     setCopiedLink(true);
-    setTimeout(() => setCopiedLink(false), 1800);
+    window.setTimeout(() => setCopiedLink(false), 2400);
   };
 
   return (
@@ -357,7 +378,7 @@ export default function CatchmentWorkspace() {
       )}
 
       {streetViewOpen && selectedZone && (
-        <StreetViewModal zone={selectedZone} onClose={() => setStreetViewOpen(false)} />
+        <StreetViewModal zone={selectedZone} initialRainfallMmHr={rainfallMmHr} onClose={() => setStreetViewOpen(false)} />
       )}
 
       {sandboxOpen && selectedZone && (
@@ -374,6 +395,15 @@ export default function CatchmentWorkspace() {
           validation={validation}
           onClose={() => setMethodologyOpen(false)}
         />
+      )}
+
+      {copiedLink && (
+        <div
+          role="status"
+          className="absolute left-1/2 top-16 z-40 -translate-x-1/2 rounded-md border border-[#22C5E5]/60 bg-[#151D29] px-4 py-2 text-xs font-medium text-[#E5E7EB] shadow-lg"
+        >
+          Scenario URL updated &amp; copied to clipboard
+        </div>
       )}
 
       {error && (

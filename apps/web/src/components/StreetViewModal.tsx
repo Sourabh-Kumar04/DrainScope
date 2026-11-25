@@ -23,6 +23,7 @@ import type { StreetDepthResponse, ZoneProperties } from "@/lib/types";
 
 interface StreetViewModalProps {
   zone: ZoneProperties;
+  initialRainfallMmHr?: number;
   onClose: () => void;
 }
 
@@ -216,7 +217,7 @@ function loadImageElement(src: string): Promise<HTMLImageElement> {
   });
 }
 
-export default function StreetViewModal({ zone, onClose }: StreetViewModalProps) {
+export default function StreetViewModal({ zone, initialRainfallMmHr = 60, onClose }: StreetViewModalProps) {
   const viewerMountRef = useRef<HTMLDivElement | null>(null);
   const viewerRef = useRef<Viewer | null>(null);
   const glCanvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -224,7 +225,7 @@ export default function StreetViewModal({ zone, onClose }: StreetViewModalProps)
   const token = (process.env.NEXT_PUBLIC_MAPILLARY_TOKEN || "").trim();
 
   const [activeTab, setActiveTab] = useState<ViewTab>("live_flood");
-  const [rainfallMmHr, setRainfallMmHr] = useState<number>(60);
+  const [rainfallMmHr, setRainfallMmHr] = useState<number>(initialRainfallMmHr);
   const [nbsEnabled, setNbsEnabled] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [splitX, setSplitX] = useState<number>(0.5);

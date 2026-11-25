@@ -27,6 +27,7 @@ interface FlowSandbox3DModalProps {
 type ToolMode = "orbit" | "bioswale" | "pump";
 
 interface SimHudStats {
+  simMinutes: number;
   maxDepthCm: number;
   floodedAreaPct: number;
   waterVolumeKl: number;
@@ -50,6 +51,7 @@ export default function FlowSandbox3DModal({
   const [toolMode, setToolMode] = useState<ToolMode>("orbit");
   const [resetNonce, setResetNonce] = useState(0);
   const [stats, setStats] = useState<SimHudStats>({
+    simMinutes: 0,
     maxDepthCm: 0,
     floodedAreaPct: 0,
     waterVolumeKl: 0,
@@ -104,8 +106,15 @@ export default function FlowSandbox3DModal({
     const isBioswale = new Uint8Array(totalCells);
     const isPump = new Uint8Array(totalCells);
 
+    const sortedElev = [...patch.elevations].sort((a, b) => a - b);
+    const p05 = sortedElev[Math.floor(totalCells * 0.05)] ?? patch.min_elev_m;
+    const p95 = sortedElev[Math.floor(totalCells * 0.95)] ?? patch.max_elev_m;
+    const rawSpan = Math.max(0.5, p95 - p05);
+    const normScale = Math.min(1.0, 2.4 / rawSpan);
+
     for (let i = 0; i < totalCells; i++) {
-      const rel = patch.elevations[i] - patch.min_elev_m;
+      const clamped = Math.max(p05, Math.min(p95, patch.elevations[i]));
+      const rel = (clamped - p05) * normScale;
       baseH[i] = rel;
       curH[i] = rel;
       imp[i] = patch.impervious_mask[i];
@@ -403,23 +412,30 @@ export default function FlowSandbox3DModal({
       // 1. Mass-conserving rainfall inflow & explicit sinks (soil/bioswale/drain/pump)
       for (let i = 0; i < totalCells; i++) {
         if (rainMPerStep > 0) {
-          const runoffFactor = 0.30 + 0.65 * imp[i];
+          const runoffFactor = 0.25 + 0.60 * imp[i];
           const added = rainMPerStep * runoffFactor;
           water[i] += added;
           rainInflowTotalM3 += added * cellAreaM2;
         }
+        // Background soil infiltration + minor roadside drainage capacity
+        const baseDrainRate = ((1.0 - imp[i]) * 0.00018 + 0.00012 * drainEfficiency);
+        if (water[i] > 0) {
+          const bgOut = Math.min(water[i], baseDrainRate);
+          water[i] -= bgOut;
+          drainedTotalM3 += bgOut * cellAreaM2;
+        }
         if (isBioswale[i]) {
-          const absorbed = Math.min(water[i], 0.0025);
+          const absorbed = Math.min(water[i], 0.0035);
           water[i] -= absorbed;
           drainedTotalM3 += absorbed * cellAreaM2;
         }
         if (isDrain[i]) {
-          const drained = Math.min(water[i], 0.006 * drainEfficiency);
+          const drained = Math.min(water[i], 0.012 * drainEfficiency);
           water[i] -= drained;
           drainedTotalM3 += drained * cellAreaM2;
         }
         if (isPump[i]) {
-          const pumped = Math.min(water[i], 0.010);
+          const pumped = Math.min(water[i], 0.018);
           water[i] -= pumped;
           drainedTotalM3 += pumped * cellAreaM2;
         }
@@ -544,6 +560,7 @@ export default function FlowSandbox3DModal({
       frameCounter += 1;
       if (frameCounter % 12 === 0) {
         setStats({
+          simMinutes: Math.round(simElapsedMin),
           maxDepthCm: Math.round(maxW * 100),
           floodedAreaPct: Math.round((100 * floodedCells) / totalCells),
           waterVolumeKl: Math.round(totalVolM3),
@@ -624,6 +641,10 @@ export default function FlowSandbox3DModal({
 
             {/* Live Physics Telemetry Strip */}
             <div className="pointer-events-none absolute left-4 top-4 flex flex-wrap gap-2 font-mono">
+              <div className="rounded-xl border border-white/10 bg-[#0C121A]/90 px-3 py-2 backdrop-blur-md">
+                <p className="font-sans text-[10px] text-slate-400">1-Hr Storm</p>
+                <p className="text-sm font-bold text-[#22C5E5]">T+{stats.simMinutes} / 60m</p>
+              </div>
               <div className="rounded-xl border border-white/10 bg-[#0C121A]/90 px-3 py-2 backdrop-blur-md">
                 <p className="font-sans text-[10px] text-slate-400">Max Ponding</p>
                 <p className="text-sm font-bold text-rose-400">{stats.maxDepthCm} cm</p>

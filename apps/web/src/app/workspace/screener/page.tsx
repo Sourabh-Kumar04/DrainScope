@@ -247,8 +247,13 @@ export default function SiteScreenerPage() {
         <div className="mt-6 space-y-5">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             <div className="rounded-2xl border border-white/10 bg-[#0C121A] p-4">
-              <p className="text-[11px] text-slate-400">Portfolio Mean Score</p>
+              <p className="text-[11px] text-slate-400">In-Catchment Mean Score</p>
               <p className="mt-1 font-mono text-2xl font-bold text-[#C8FF00]">{result.mean_score_100} / 100</p>
+              {result.in_catchment_count < result.total_sites && (
+                <p className="mt-0.5 text-[10px] text-amber-300">
+                  Excludes {result.total_sites - result.in_catchment_count} out-of-area site(s)
+                </p>
+              )}
             </div>
             <div className="rounded-2xl border border-white/10 bg-[#0C121A] p-4">
               <p className="text-[11px] text-slate-400">Critical Sites</p>
