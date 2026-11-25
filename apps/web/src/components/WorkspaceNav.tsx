@@ -1,34 +1,57 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, BookOpen, Crosshair, Home, Map as MapIcon, Table2, Waves } from "lucide-react";
+import {
+  BarChart3,
+  BookOpen,
+  ChevronLeft,
+  ChevronRight,
+  Crosshair,
+  Home,
+  Map as MapIcon,
+  Table2,
+  Waves,
+} from "lucide-react";
 
 const NAV_ITEMS = [
-  { href: "/workspace", label: "Map Studio", icon: MapIcon },
-  { href: "/workspace/hotspots", label: "Hotspots", icon: Table2 },
+  { href: "/workspace", label: "Map Workspace", icon: MapIcon },
+  { href: "/workspace/hotspots", label: "Risk Hotspots", icon: Table2 },
   { href: "/workspace/screener", label: "Site Screener", icon: Crosshair },
-  { href: "/workspace/analytics", label: "NbS ROI", icon: BarChart3 },
-  { href: "/methodology", label: "Methodology", icon: BookOpen },
+  { href: "/workspace/analytics", label: "Intervention ROI", icon: BarChart3 },
+  { href: "/methodology", label: "Data & Methodology", icon: BookOpen },
 ];
 
 export default function WorkspaceNav() {
   const pathname = usePathname();
+  const [expanded, setExpanded] = useState(false);
 
   return (
-    <aside className="z-30 flex h-screen w-[64px] shrink-0 flex-col items-center justify-between border-r border-white/10 bg-[#080C12] py-4">
-      <div className="flex flex-col items-center gap-3">
-        <Link
-          href="/"
-          title="DrainScope Home"
-          className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#C8FF00]/15 text-[#C8FF00] ring-1 ring-[#C8FF00]/40 transition hover:bg-[#C8FF00]/25"
-        >
-          <Waves className="h-5 w-5" />
-        </Link>
+    <aside
+      className={`z-30 flex h-screen shrink-0 flex-col justify-between border-r border-[#263445] bg-[#0B1018] py-3 transition-[width] duration-200 ${
+        expanded ? "w-[210px] px-3" : "w-[56px] items-center"
+      }`}
+    >
+      <div className={`flex flex-col gap-3 ${expanded ? "w-full" : "items-center"}`}>
+        <div className={`flex items-center ${expanded ? "justify-between px-1" : "justify-center"}`}>
+          <Link
+            href="/"
+            title="DrainScope Home"
+            className="flex items-center gap-2.5 text-[#22C5E5] transition hover:opacity-90"
+          >
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-[#263445] bg-[#151D29]">
+              <Waves className="h-4 w-4 text-[#22C5E5]" />
+            </div>
+            {expanded && (
+              <span className="text-xs font-semibold tracking-[0.14em] text-[#E5E7EB]">DRAINSCOPE</span>
+            )}
+          </Link>
+        </div>
 
-        <div className="my-1 h-px w-7 bg-white/10" />
+        <div className="h-px w-full bg-[#263445]/80" />
 
-        <nav className="flex flex-col items-center gap-2">
+        <nav className={`flex flex-col gap-1 ${expanded ? "w-full" : "items-center"}`}>
           {NAV_ITEMS.map((item) => {
             const active =
               item.href === "/workspace" ? pathname === "/workspace" : pathname.startsWith(item.href);
@@ -38,29 +61,50 @@ export default function WorkspaceNav() {
                 key={item.href}
                 href={item.href}
                 title={item.label}
-                className={`group relative flex h-10 w-10 items-center justify-center rounded-xl transition ${
+                className={`group relative flex items-center rounded-md transition ${
+                  expanded ? "gap-2.5 px-2.5 py-2 text-xs font-medium" : "h-9 w-9 justify-center"
+                } ${
                   active
-                    ? "bg-[#C8FF00] text-[#080C12] shadow-[0_0_18px_rgba(200,255,0,0.35)]"
-                    : "text-slate-400 hover:bg-white/[0.07] hover:text-white"
+                    ? "bg-[#151D29] text-[#22C5E5] ring-1 ring-inset ring-[#263445]"
+                    : "text-[#94A3B8] hover:bg-[#111925] hover:text-[#E5E7EB]"
                 }`}
               >
-                <Icon className="h-4 w-4" />
-                <span className="pointer-events-none absolute left-14 z-50 whitespace-nowrap rounded-lg border border-white/10 bg-[#0C121A] px-2.5 py-1 text-[11px] font-semibold text-white opacity-0 shadow-xl transition group-hover:opacity-100">
-                  {item.label}
-                </span>
+                <Icon className="h-4 w-4 shrink-0" />
+                {expanded ? (
+                  <span className="truncate">{item.label}</span>
+                ) : (
+                  <span className="pointer-events-none absolute left-12 z-50 whitespace-nowrap rounded border border-[#263445] bg-[#151D29] px-2.5 py-1 text-[11px] font-medium text-[#E5E7EB] opacity-0 shadow-lg transition group-hover:opacity-100">
+                    {item.label}
+                  </span>
+                )}
               </Link>
             );
           })}
         </nav>
       </div>
 
-      <Link
-        href="/"
-        title="Back to Landing Page"
-        className="flex h-9 w-9 items-center justify-center rounded-xl text-slate-500 transition hover:bg-white/[0.06] hover:text-slate-200"
-      >
-        <Home className="h-4 w-4" />
-      </Link>
+      <div className={`flex flex-col gap-1.5 ${expanded ? "w-full" : "items-center"}`}>
+        <button
+          onClick={() => setExpanded((v) => !v)}
+          title={expanded ? "Collapse sidebar" : "Expand sidebar"}
+          className={`flex items-center rounded-md text-[#94A3B8] transition hover:bg-[#111925] hover:text-[#E5E7EB] ${
+            expanded ? "gap-2.5 px-2.5 py-2 text-xs" : "h-9 w-9 justify-center"
+          }`}
+        >
+          {expanded ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+          {expanded && <span>Collapse</span>}
+        </button>
+        <Link
+          href="/"
+          title="Back to Landing Page"
+          className={`flex items-center rounded-md text-[#94A3B8] transition hover:bg-[#111925] hover:text-[#E5E7EB] ${
+            expanded ? "gap-2.5 px-2.5 py-2 text-xs" : "h-9 w-9 justify-center"
+          }`}
+        >
+          <Home className="h-4 w-4 shrink-0" />
+          {expanded && <span>Home</span>}
+        </Link>
+      </div>
     </aside>
   );
 }

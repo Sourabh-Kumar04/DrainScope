@@ -9,10 +9,27 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #080b10;
+  background-color: #0b1018;
+  color: #e5e7eb;
   overflow: hidden;
 }
 
 input[type="range"] {
-  accent-color: #c8ff00;
+  accent-color: #22c5e5;
+}
+
+/* Subtle GIS scrollbars for independent panel scrolling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1018;
+}
+::-webkit-scrollbar-thumb {
+  background: #263445;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #384c63;
 }

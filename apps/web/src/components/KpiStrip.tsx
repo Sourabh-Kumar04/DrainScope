@@ -10,11 +10,11 @@ interface KpiStripProps {
 export default function KpiStrip({ summary, loading }: KpiStripProps) {
   if (!summary) {
     return (
-      <div className="absolute right-4 top-4 z-10 flex gap-2.5">
+      <div className="absolute left-4 top-16 z-10 flex gap-2">
         {[0, 1, 2].map((i) => (
           <div
             key={i}
-            className="h-[74px] w-[122px] animate-pulse rounded-2xl border border-white/10 bg-[#0C121A]/80 backdrop-blur-xl"
+            className="h-[64px] w-[142px] animate-pulse rounded-md border border-[#263445] bg-[#151D29]"
           />
         ))}
       </div>
@@ -22,38 +22,52 @@ export default function KpiStrip({ summary, loading }: KpiStripProps) {
   }
 
   const cards = [
-    { label: "Critical Choke Points", value: String(summary.critical_count), dot: "bg-rose-400", accent: "text-rose-400" },
-    { label: "High Risk Spots", value: String(summary.high_count), dot: "bg-orange-400", accent: "text-orange-400" },
+    {
+      label: "Critical Choke Points",
+      value: String(summary.critical_count),
+      sub: "Immediate field triage",
+      dot: "bg-[#F87171]",
+      accent: "text-[#F87171]",
+    },
+    {
+      label: "High Risk Zones",
+      value: String(summary.high_count),
+      sub: "Elevated runoff pooling",
+      dot: "bg-[#FBBF24]",
+      accent: "text-[#FBBF24]",
+    },
     {
       label: "Mean Runoff Risk",
       value: `${Math.round(summary.mean_wsi * 100)}%`,
+      sub: `${summary.rainfall_mm_hr} mm/hr scenario`,
       delta: summary.mean_wsi_delta,
-      dot: "bg-[#C8FF00]",
-      accent: "text-[#C8FF00]",
+      dot: "bg-[#22C5E5]",
+      accent: "text-[#E5E7EB]",
     },
   ];
 
   return (
-    <div className="absolute right-4 top-4 z-10 flex gap-2.5">
+    <div className="absolute left-4 top-16 z-10 flex flex-wrap gap-2">
       {cards.map((kpi) => (
         <div
           key={kpi.label}
-          className={`min-w-[126px] rounded-2xl border border-white/10 bg-[#0C121A]/85 px-4 py-3 backdrop-blur-xl shadow-2xl transition-opacity ${
+          className={`min-w-[144px] rounded-md border border-[#263445] bg-[#151D29]/95 px-3 py-2 shadow-md transition-opacity ${
             loading ? "opacity-70" : "opacity-100"
           }`}
         >
           <div className="flex items-center gap-1.5">
-            <span className={`h-2 w-2 rounded-full ${kpi.dot}`} />
-            <p className="text-[11px] font-medium text-slate-300">{kpi.label}</p>
+            <span className={`h-1.5 w-1.5 rounded-full ${kpi.dot}`} />
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-[#94A3B8]">{kpi.label}</p>
           </div>
-          <div className="mt-1.5 flex items-baseline gap-2 font-mono tabular-nums">
-            <span className={`text-xl font-bold ${kpi.accent}`}>{kpi.value}</span>
+          <div className="mt-1 flex items-baseline gap-2 font-mono tabular-nums">
+            <span className={`text-lg font-bold ${kpi.accent}`}>{kpi.value}</span>
             {kpi.delta !== undefined && kpi.delta !== 0 && (
-              <span className={`text-xs font-medium ${kpi.delta < 0 ? "text-emerald-400" : "text-rose-400"}`}>
+              <span className={`text-[11px] font-semibold ${kpi.delta < 0 ? "text-emerald-400" : "text-[#F87171]"}`}>
                 {kpi.delta > 0 ? `+${Math.round(kpi.delta * 100)}%` : `${Math.round(kpi.delta * 100)}%`}
               </span>
             )}
           </div>
+          <p className="text-[10px] text-[#64748B]">{kpi.sub}</p>
         </div>
       ))}
     </div>

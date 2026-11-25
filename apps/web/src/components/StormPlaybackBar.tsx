@@ -24,20 +24,20 @@ export default function StormPlaybackBar({
   rainfallMmHr,
 }: StormPlaybackBarProps) {
   return (
-    <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 rounded-2xl border border-white/15 bg-[#0C121A]/92 px-4 py-2.5 backdrop-blur-xl shadow-2xl">
+    <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 rounded-md border border-[#263445] bg-[#151D29] px-3.5 py-2 shadow-lg">
       <button
         onClick={onTogglePlay}
         title={isPlaying ? "Pause storm playback" : "Play 0–60 min storm rise"}
-        className="flex h-8 w-8 items-center justify-center rounded-full bg-[#C8FF00] text-[#080B10] shadow-[0_0_16px_rgba(200,255,0,0.35)] transition hover:brightness-105"
+        className="flex h-7 w-7 items-center justify-center rounded-md bg-[#22C5E5] text-[#0B1018] transition hover:brightness-110"
       >
         {isPlaying ? <Pause className="h-3.5 w-3.5" /> : <Play className="ml-0.5 h-3.5 w-3.5" />}
       </button>
 
-      <div className="flex w-[195px] flex-col">
-        <div className="mb-1 flex items-center justify-between font-mono text-[10px]">
-          <span className="font-bold text-white">T+{Math.round(stormMinute)} min</span>
-          <span className="text-slate-400">
-            {is3D ? "3D Rise" : "2D Fill"} · {rainfallMmHr} mm/hr
+      <div className="flex w-[190px] flex-col">
+        <div className="mb-1 flex items-center justify-between font-mono text-[10px] tabular-nums">
+          <span className="font-semibold text-[#E5E7EB]">T+{Math.round(stormMinute)} min</span>
+          <span className="text-[#94A3B8]">
+            {is3D ? "3D" : "2D"} · {rainfallMmHr} mm/hr
           </span>
         </div>
         <input
@@ -54,19 +54,19 @@ export default function StormPlaybackBar({
       <button
         onClick={() => onMinuteChange(0)}
         title="Reset storm clock to T+0 min"
-        className="rounded-lg p-1.5 text-slate-400 transition hover:bg-white/10 hover:text-white"
+        className="rounded p-1 text-[#94A3B8] transition hover:bg-[#111925] hover:text-white"
       >
         <RotateCcw className="h-3.5 w-3.5" />
       </button>
 
-      <div className="h-5 w-px bg-white/10" />
+      <div className="h-4 w-px bg-[#263445]" />
 
       <button
         onClick={onToggleFlow}
-        className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold transition ${
+        className={`flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-[11px] font-medium transition ${
           showFlow
-            ? "border border-cyan-400/60 bg-cyan-400/20 text-cyan-200 shadow-[0_0_12px_rgba(34,211,238,0.25)]"
-            : "border border-white/10 bg-white/5 text-slate-400 hover:text-white"
+            ? "border-[#22C5E5]/60 bg-[#22C5E5]/15 text-[#22C5E5]"
+            : "border-[#263445] bg-[#0B1018] text-[#94A3B8] hover:text-[#E5E7EB]"
         }`}
       >
         <Waves className="h-3.5 w-3.5" />

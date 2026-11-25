@@ -1,23 +1,23 @@
 "use client";
 
 const ITEMS = [
-  { label: "Critical", color: "bg-rose-400" },
-  { label: "High", color: "bg-orange-400" },
-  { label: "Pooling", color: "bg-cyan-600" },
-  { label: "OSM Trunk Drains", color: "bg-cyan-300" },
+  { label: "Critical (>80 cm)", color: "bg-[#F87171]" },
+  { label: "High (30–80 cm)", color: "bg-[#2563EB]" },
+  { label: "Moderate (10–30 cm)", color: "bg-[#22C5E5]" },
+  { label: "Trunk Drains", color: "bg-[#38BDF8]" },
 ];
 
 export default function RiskLegend() {
   return (
-    <div className="pointer-events-none absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3.5 rounded-2xl border border-white/10 bg-[#0C121A]/85 px-4 py-2.5 backdrop-blur-xl shadow-2xl">
-      <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">
-        30m Screening (&plusmn;30m)
+    <div className="pointer-events-none absolute bottom-4 right-14 z-10 hidden items-center gap-3 rounded-md border border-[#263445] bg-[#151D29]/95 px-3 py-1.5 shadow-md xl:flex">
+      <span className="font-mono text-[10px] font-semibold uppercase tracking-wider text-[#94A3B8]">
+        Legend
       </span>
-      <span className="h-3 w-px bg-white/15" />
+      <span className="h-3 w-px bg-[#263445]" />
       {ITEMS.map((item) => (
-        <div key={item.label} className="flex items-center gap-1.5 text-xs">
-          <span className={`h-2.5 w-2.5 rounded-full ${item.color}`} />
-          <span className="font-medium text-slate-200">{item.label}</span>
+        <div key={item.label} className="flex items-center gap-1.5 text-[11px]">
+          <span className={`h-2 w-2 rounded-full ${item.color}`} />
+          <span className="text-[#CBD5E1]">{item.label}</span>
         </div>
       ))}
     </div>

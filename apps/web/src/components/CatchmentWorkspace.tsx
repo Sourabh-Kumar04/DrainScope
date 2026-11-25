@@ -35,6 +35,7 @@ import StreetViewModal from "./StreetViewModal";
 import MethodologyModal from "./MethodologyModal";
 import FlowSandbox3DModal from "./FlowSandbox3DModal";
 import MicroDrainEvidenceCard from "./MicroDrainEvidenceCard";
+import RiskLegend from "./RiskLegend";
 
 const SLUG = "barapullah";
 
@@ -198,7 +199,7 @@ export default function CatchmentWorkspace() {
   };
 
   return (
-    <div className="relative h-screen flex-1 overflow-hidden bg-[#080B10]">
+    <div className="relative h-screen flex-1 overflow-hidden bg-[#0B1018]">
       <CatchmentMap
         zones={zones}
         hexes={hexes}
@@ -262,6 +263,9 @@ export default function CatchmentWorkspace() {
         showIncidents={showIncidents}
         onToggleIncidents={() => setShowIncidents((v) => !v)}
         incidentCount={incidents?.features.length ?? 0}
+        showMicroDrains={showMicroDrains}
+        onToggleMicroDrains={() => setShowMicroDrains((v) => !v)}
+        microDrainCount={microDrains?.features.length ?? 0}
         selectedZoneId={selectedZoneId}
         onBackToBasin={() => {
           setSelectedZone(null);
@@ -329,19 +333,7 @@ export default function CatchmentWorkspace() {
         rainfallMmHr={rainfallMmHr}
       />
 
-      {(microDrains?.features.length ?? 0) > 0 && (
-        <button
-          onClick={() => setShowMicroDrains((v) => !v)}
-          className={`absolute bottom-20 left-4 z-20 flex items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] font-medium transition ${
-            showMicroDrains
-              ? "border-sky-500/50 bg-[#11151C] text-slate-100"
-              : "border-[#242B38] bg-[#11151C] text-slate-400 hover:text-slate-200"
-          }`}
-        >
-          <span className={`h-2 w-2 rounded-full ${showMicroDrains ? "bg-sky-400" : "bg-slate-600"}`} />
-          <span className="tabular-nums">Street Inlets ({microDrains?.features.length ?? 0})</span>
-        </button>
-      )}
+      {!selectedZone && !selectedMicroDrain && <RiskLegend />}
 
       {selectedMicroDrain && (
         <MicroDrainEvidenceCard
