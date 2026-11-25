@@ -20,7 +20,11 @@ export default function AnalyticsRoiPage() {
   const [rain, setRain] = useState(60);
   const [stressYr, setStressYr] = useState<ProjectionYear>(5);
   const [nbsPct, setNbsPct] = useState(25);
-  const [bioswaleCostPerM3, setBioswaleCostPerM3] = useState(3200); // Editable ₹/m³ screening cost
+  const [parkDetention, setParkDetention] = useState(false);
+  const [costInput, setCostInput] = useState("3200");
+  const parsedCost = Number(costInput);
+  const isCostValid = costInput.trim() !== "" && Number.isFinite(parsedCost) && parsedCost >= 500 && parsedCost <= 50000;
+  const bioswaleCostPerM3 = isCostValid ? parsedCost : null;
 
   const [baseSummary, setBaseSummary] = useState<CatchmentSummary | null>(null);
   const [stressSummary, setStressSummary] = useState<CatchmentSummary | null>(null);
@@ -42,7 +46,7 @@ export default function AnalyticsRoiPage() {
       ),
       simulateOrganicZones(
         "barapullah",
-        { rainfall_mm_hr: rain, projection_years: stressYr, nbs_impervious_reduction_pct: nbsPct, park_detention_enabled: true },
+        { rainfall_mm_hr: rain, projection_years: stressYr, nbs_impervious_reduction_pct: nbsPct, park_detention_enabled: parkDetention },
         controller.signal
       ),
     ])
@@ -54,13 +58,17 @@ export default function AnalyticsRoiPage() {
       })
       .catch(() => {});
     return () => controller.abort();
-  }, [rain, stressYr, nbsPct]);
+  }, [rain, stressYr, nbsPct, parkDetention]);
 
   const topParks = useMemo<ParkRoiRow[]>(() => {
     const map = new Map<string, { areaSqm: number; capKl: number; zones: number; sampleZoneId: string }>();
+    const EXCLUDED_NAMES = new Set(["none mapped", "public park", "unnamed park"]);
     for (const z of zones) {
-      if (!z.park_name || z.park_name === "None mapped" || z.park_capacity_kl <= 0 || z.nearest_park_m > 350) continue;
-      const prev = map.get(z.park_name);
+      const pname = (z.park_name || "").trim();
+      const lower = pname.toLowerCase();
+      if (!pname || EXCLUDED_NAMES.has(lower) || lower.includes("river") || lower.includes("nallah") || lower.includes("drain")) continue;
+      if (z.park_capacity_kl <= 0 || z.nearest_park_m > 350) continue;
+      const prev = map.get(pname);
       if (prev) {
         prev.zones += 1;
       } else {
@@ -75,18 +83,18 @@ export default function AnalyticsRoiPage() {
     return [...map.entries()]
       .map(([parkName, info]) => {
         // 1 KL = 1 m³ of shallow bioswale detention
-        const estCapexInr = info.capKl * bioswaleCostPerM3;
+        const estCapexInr = bioswaleCostPerM3 !== null ? info.capKl * bioswaleCostPerM3 : 0;
         return {
           parkName,
           areaHa: Number((info.areaSqm / 10000).toFixed(2)),
           capacityKl: info.capKl,
           zonesServed: info.zones,
-          estCapexLakhs: Number((estCapexInr / 100000).toFixed(1)),
-          inrPerKl: bioswaleCostPerM3,
+          estCapexLakhs: bioswaleCostPerM3 !== null ? Number((estCapexInr / 100000).toFixed(1)) : -1,
+          inrPerKl: bioswaleCostPerM3 ?? 0,
           sampleZoneId: info.sampleZoneId,
         };
       })
-      .sort((a, b) => b.zonesServed * b.capacityKl - a.zonesServed * a.capacityKl)
+      .sort((a, b) => b.capacityKl - a.capacityKl)
       .slice(0, 12);
   }, [zones, bioswaleCostPerM3]);
 
@@ -131,12 +139,23 @@ export default function AnalyticsRoiPage() {
           <select
             value={nbsPct}
             onChange={(e) => setNbsPct(Number(e.target.value))}
-            className="rounded-xl border border-white/10 bg-[#0C121A] px-3 py-2 text-[#C8FF00] outline-none"
+            className="rounded-xl border border-white/10 bg-[#0C121A] px-3 py-2 text-[#22C5E5] outline-none"
           >
-            <option value={15}>NbS: -15% Concrete + Parks</option>
-            <option value={25}>NbS: -25% Concrete + Parks</option>
-            <option value={35}>NbS: -35% Concrete + Parks</option>
+            <option value={0}>NbS: 0% Concrete</option>
+            <option value={15}>NbS: -15% Concrete</option>
+            <option value={25}>NbS: -25% Concrete</option>
+            <option value={35}>NbS: -35% Concrete</option>
           </select>
+          <button
+            onClick={() => setParkDetention((v) => !v)}
+            className={`rounded-xl border px-3 py-2 font-mono text-xs transition ${
+              parkDetention
+                ? "border-emerald-400/60 bg-emerald-500/15 text-emerald-300"
+                : "border-white/10 bg-[#0C121A] text-slate-400 hover:text-white"
+            }`}
+          >
+            Park Detention: {parkDetention ? "ON" : "OFF"}
+          </button>
         </div>
       </div>
 
@@ -145,7 +164,7 @@ export default function AnalyticsRoiPage() {
         {[
           { title: "1. Baseline (Now)", sub: `${rain} mm/hr · No intervention`, data: baseSummary, border: "border-white/10" },
           { title: `2. +${stressYr} Yr Stress (What-If)`, sub: `${rain} mm/hr · Unmitigated stress`, data: stressSummary, border: "border-rose-400/35" },
-          { title: `3. +${stressYr} Yr + NbS Relief`, sub: `-${nbsPct}% concrete + park detention`, data: nbsSummary, border: "border-[#C8FF00]/45" },
+          { title: `3. +${stressYr} Yr + NbS Relief`, sub: `-${nbsPct}% concrete${parkDetention ? " + park detention" : " (parks off)"}`, data: nbsSummary, border: "border-[#C8FF00]/45" },
         ].map((card) => (
           <div key={card.title} className={`rounded-2xl border ${card.border} bg-[#0C121A] p-5`}>
             <p className="text-xs font-bold text-white">{card.title}</p>
@@ -186,19 +205,30 @@ export default function AnalyticsRoiPage() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-xs">
-            <IndianRupee className="h-3.5 w-3.5 text-cyan-300" />
-            <span className="text-slate-400">Bioswale Unit Cost:</span>
-            <input
-              type="number"
-              min={1000}
-              max={15000}
-              step={200}
-              value={bioswaleCostPerM3}
-              onChange={(e) => setBioswaleCostPerM3(Math.max(500, Number(e.target.value) || 3200))}
-              className="w-20 rounded-md border border-white/15 bg-[#080B10] px-2 py-0.5 font-mono text-white outline-none"
-            />
-            <span className="font-mono text-[11px] text-slate-400">/ KL (m³)</span>
+          <div className="flex flex-col items-end gap-1">
+            <div className={`flex items-center gap-2 rounded-xl border px-3 py-2 text-xs ${isCostValid ? "border-white/10 bg-white/[0.03]" : "border-rose-500/60 bg-rose-950/30"}`}>
+              <IndianRupee className="h-3.5 w-3.5 text-cyan-300" />
+              <span className="text-slate-400">Bioswale Unit Cost:</span>
+              <input
+                type="text"
+                inputMode="numeric"
+                value={costInput}
+                onChange={(e) => setCostInput(e.target.value)}
+                aria-invalid={!isCostValid}
+                className="w-24 rounded-md border border-white/15 bg-[#080B10] px-2 py-0.5 font-mono text-white outline-none"
+              />
+              <span className="font-mono text-[11px] text-slate-400">/ KL</span>
+              <button
+                type="button"
+                onClick={() => setCostInput("3200")}
+                className="rounded border border-white/15 px-2 py-0.5 text-[10px] text-slate-300 hover:bg-white/10"
+              >
+                Reset
+              </button>
+            </div>
+            {!isCostValid && (
+              <p className="text-[10px] text-rose-400">Enter a valid unit cost between ₹500 and ₹50,000 / KL.</p>
+            )}
           </div>
         </div>
 
@@ -221,7 +251,7 @@ export default function AnalyticsRoiPage() {
                   <td className="px-3 py-3 font-mono text-slate-300">{p.areaHa} ha</td>
                   <td className="px-3 py-3 font-mono text-cyan-300">{p.zonesServed} zones</td>
                   <td className="px-3 py-3 font-mono font-bold text-[#C8FF00]">{p.capacityKl.toLocaleString()} KL</td>
-                  <td className="px-3 py-3 font-mono text-slate-200">₹{p.estCapexLakhs} Lakh</td>
+                  <td className="px-3 py-3 font-mono text-slate-200">{p.estCapexLakhs >= 0 ? `₹${p.estCapexLakhs} Lakh` : "—"}</td>
                   <td className="py-3 pl-3 text-right">
                     <Link
                       href={`/workspace?zone=${encodeURIComponent(p.sampleZoneId)}&rain=${rain}&yr=${stressYr}&nbs=${nbsPct}&park=1`}

@@ -87,7 +87,7 @@ export default function FlowSandbox3DModal({
     const N = patch.grid_size;
     const totalCells = N * N;
     const WORLD_SIZE = 44;
-    const VERT_SCALE = 2.6;
+    const VERT_SCALE = 1.15;
 
     // ------------------------------------------------------------------
     // 1. Virtual-Pipe Shallow Water Equation (SWE) State Arrays
@@ -109,13 +109,17 @@ export default function FlowSandbox3DModal({
       baseH[i] = rel;
       curH[i] = rel;
       imp[i] = patch.impervious_mask[i];
-      water[i] = 0.015; // slight initial wet film
+      water[i] = 0.0; // start dry for mass conservation
     }
     for (const idx of patch.drain_cells) {
       if (idx >= 0 && idx < totalCells) isDrain[idx] = 1;
     }
 
     let drainedTotalM3 = 0;
+    let boundaryOutflowM3 = 0;
+    let rainInflowTotalM3 = 0;
+    let simElapsedMin = 0;
+    const MAX_STORM_MIN = 60.0;
     let bioswaleCount = 0;
     let pumpCount = 0;
 
@@ -385,27 +389,37 @@ export default function FlowSandbox3DModal({
     const cellAreaM2 = patch.cell_size_m * patch.cell_size_m;
 
     const stepFluid = () => {
-      const dt = 0.06;
-      const gravity = 4.2;
-      const rainMPerStep = (rainRef.current / 1000.0) * 0.012; // Accelerated time scale for visual clarity
+      const dt = 0.05;
+      const gravity = 3.2;
+      const stepMin = 0.12; // 1 step = 7.2 seconds of storm time (~500 steps = 60 min storm)
+      const isRaining = simElapsedMin < MAX_STORM_MIN;
+      if (isRaining) {
+        simElapsedMin = Math.min(MAX_STORM_MIN, simElapsedMin + stepMin);
+      }
+      // Exact physical rainfall depth in meters for this timestep: (mm/hr -> m/hr) * (stepMin / 60)
+      const rainMPerStep = isRaining ? (rainRef.current / 1000.0) * (stepMin / 60.0) : 0.0;
       const drainEfficiency = 1.0 - clogRef.current / 100.0;
 
-      // 1. Rainfall inflow & infiltration/bioswale absorption
+      // 1. Mass-conserving rainfall inflow & explicit sinks (soil/bioswale/drain/pump)
       for (let i = 0; i < totalCells; i++) {
-        const runoffFactor = 0.35 + 0.65 * imp[i];
-        water[i] += rainMPerStep * runoffFactor;
+        if (rainMPerStep > 0) {
+          const runoffFactor = 0.30 + 0.65 * imp[i];
+          const added = rainMPerStep * runoffFactor;
+          water[i] += added;
+          rainInflowTotalM3 += added * cellAreaM2;
+        }
         if (isBioswale[i]) {
-          const absorbed = Math.min(water[i], 0.0055);
+          const absorbed = Math.min(water[i], 0.0025);
           water[i] -= absorbed;
           drainedTotalM3 += absorbed * cellAreaM2;
         }
         if (isDrain[i]) {
-          const drained = Math.min(water[i], 0.014 * drainEfficiency);
+          const drained = Math.min(water[i], 0.006 * drainEfficiency);
           water[i] -= drained;
           drainedTotalM3 += drained * cellAreaM2;
         }
         if (isPump[i]) {
-          const pumped = Math.min(water[i], 0.022);
+          const pumped = Math.min(water[i], 0.010);
           water[i] -= pumped;
           drainedTotalM3 += pumped * cellAreaM2;
         }
@@ -466,7 +480,9 @@ export default function FlowSandbox3DModal({
           const outflow = fL[i] + fR[i] + fT[i] + fB[i];
           water[i] = Math.max(0, water[i] + dt * (inflow - outflow));
           if (r === 0 || r === N - 1 || c === 0 || c === N - 1) {
-            water[i] *= 0.86;
+            const lost = water[i] * 0.14;
+            water[i] -= lost;
+            boundaryOutflowM3 += lost * cellAreaM2;
           }
         }
       }
@@ -505,7 +521,7 @@ export default function FlowSandbox3DModal({
           wColors[i * 3 + 1] = 0.25;
           wColors[i * 3 + 2] = 0.38;
         } else {
-          wPos.setY(i, (curH[i] + d * 1.45) * VERT_SCALE + 0.04);
+          wPos.setY(i, (curH[i] + Math.min(d, 2.5)) * VERT_SCALE + 0.04);
           // Shallow = bright cyan -> Deep = cobalt blue -> Severe (>0.45m) = coral rose warning
           const t = Math.min(1, d / 0.55);
           if (t < 0.55) {
@@ -576,7 +592,7 @@ export default function FlowSandbox3DModal({
                   3D Shallow-Water Flow Sandbox · <span className="font-mono text-[#C8FF00]">{zone.zone_id}</span>
                 </h2>
                 <span className="rounded-full bg-cyan-400/15 px-2 py-0.5 font-mono text-[10px] text-cyan-300">
-                  {patch ? `${patch.grid_size}×${patch.grid_size} SWE Pipe Model` : "Loading DEM…"}
+                  {patch ? `${patch.grid_size}×${patch.grid_size} Illustrative 1-Hr Flow` : "Loading DEM…"}
                 </span>
               </div>
               <p className="text-[11px] text-slate-400">

@@ -22,19 +22,43 @@ const TIER_PILL: Record<RiskTier, string> = {
   Low: "border-emerald-400/50 bg-emerald-500/20 text-emerald-300",
 };
 
-function parseSitesCsv(text: string): ScreenSiteInput[] {
-  const out: ScreenSiteInput[] = [];
-  for (const rawLine of text.split(/\r?\n/)) {
+interface ParseResult {
+  valid: ScreenSiteInput[];
+  errors: string[];
+  truncatedCount: number;
+}
+
+function parseSitesCsv(text: string): ParseResult {
+  const valid: ScreenSiteInput[] = [];
+  const errors: string[] = [];
+  const seen = new Set<string>();
+  const lines = text.split(/\r?\n/);
+
+  lines.forEach((rawLine, idx) => {
     const line = rawLine.trim();
-    if (!line || line.startsWith("#")) continue;
+    if (!line || line.startsWith("#")) return;
     const parts = line.split(",").map((s) => s.trim());
-    if (parts.length < 3) continue;
+    if (parts.length < 3 || !parts[0]) {
+      errors.push(`Line ${idx + 1}: expected "Name,lat,lng"`);
+      return;
+    }
     const lat = Number(parts[1]);
     const lng = Number(parts[2]);
-    if (Number.isNaN(lat) || Number.isNaN(lng)) continue;
-    out.push({ name: parts[0], lat, lng });
-  }
-  return out.slice(0, 100);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng) || lat < -90 || lat > 90 || lng < -180 || lng > 180) {
+      errors.push(`Line ${idx + 1} (${parts[0]}): invalid latitude/longitude range`);
+      return;
+    }
+    const key = `${lat.toFixed(5)},${lng.toFixed(5)}`;
+    if (seen.has(key)) {
+      errors.push(`Line ${idx + 1} (${parts[0]}): duplicate coordinate skipped`);
+      return;
+    }
+    seen.add(key);
+    valid.push({ name: parts[0], lat, lng });
+  });
+
+  const truncatedCount = Math.max(0, valid.length - 100);
+  return { valid: valid.slice(0, 100), errors, truncatedCount };
 }
 
 export default function SiteScreenerPage() {
@@ -45,11 +69,18 @@ export default function SiteScreenerPage() {
   const [result, setResult] = useState<PortfolioScreenResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [parseWarnings, setParseWarnings] = useState<string[]>([]);
 
   const handleRun = async () => {
-    const sites = parseSitesCsv(csvText);
+    const parsed = parseSitesCsv(csvText);
+    const warnings = [...parsed.errors];
+    if (parsed.truncatedCount > 0) {
+      warnings.push(`${parsed.truncatedCount} extra row(s) exceeded the 100-site limit and were not sent.`);
+    }
+    setParseWarnings(warnings);
+    const sites = parsed.valid;
     if (sites.length === 0) {
-      setError("Enter at least one valid line formatted as: Site Name,lat,lng");
+      setError("No valid rows found. Use format: Site Name,lat,lng (e.g., Moolchand,28.5644,77.2342).");
       return;
     }
     setLoading(true);
@@ -136,6 +167,14 @@ export default function SiteScreenerPage() {
             className="w-full rounded-xl border border-white/10 bg-[#080B10] p-3 font-mono text-xs text-slate-200 outline-none focus:border-cyan-400/50"
           />
           {error && <p className="mt-2 text-xs text-rose-400">{error}</p>}
+          {parseWarnings.length > 0 && (
+            <div className="mt-2 rounded-lg border border-amber-400/40 bg-amber-950/30 p-2.5 text-[11px] text-amber-200">
+              <p className="font-semibold">Input validation notices ({parseWarnings.length}):</p>
+              <ul className="mt-1 list-disc pl-4 space-y-0.5">
+                {parseWarnings.slice(0, 6).map((w, i) => <li key={i}>{w}</li>)}
+              </ul>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0C121A] p-5">
@@ -289,13 +328,7 @@ export default function SiteScreenerPage() {
             <span>
               Screening scores reflect 30m Copernicus DEM (±30m) and OSM trunk drains; verify minor drains on-site.
             </span>
-            <button
-              disabled
-              className="inline-flex cursor-not-allowed items-center gap-1.5 rounded-full bg-gradient-to-r from-[#C8FF00] via-cyan-300 to-violet-400 px-4 py-1.5 text-[11px] font-bold text-[#080C12] opacity-80"
-            >
-              <Sparkles className="h-3.5 w-3.5" />
-              Export Portfolio PDF (Phase 2)
-            </button>
+<span className="font-mono text-[11px] text-slate-400">South Delhi Barapullah Pilot · CSV Export Ready</span>
           </div>
         </div>
       )}

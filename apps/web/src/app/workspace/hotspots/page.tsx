@@ -48,7 +48,7 @@ export default function HotspotsRegisterPage() {
       .map((f) => f.properties)
       .filter((z) => {
         if (tierFilter !== "ALL" && z.risk_tier !== tierFilter) return false;
-        if (underpassOnly && !z.underpass_trap && z.nearby_underpasses.length === 0) return false;
+        if (underpassOnly && !z.underpass_trap) return false;
         if (
           q &&
           !z.zone_id.toLowerCase().includes(q) &&

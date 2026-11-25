@@ -453,7 +453,7 @@ export default function StreetViewModal({ zone, onClose }: StreetViewModalProps)
               </h2>
               <p className="text-[11px] text-slate-400">
                 {depthAssets
-                  ? `${depthAssets.model_used} · ${imageMeta?.distM ?? 0}m from pocket`
+                  ? `Mapillary (${imageMeta?.capturedDate ?? "historical"}) · ${depthAssets.model_used} · ${imageMeta?.distM ?? 0}m`
                   : "Mapillary Open Street Imagery + Local Depth-Anything-V2 Shader"}
               </p>
             </div>
@@ -464,7 +464,7 @@ export default function StreetViewModal({ zone, onClose }: StreetViewModalProps)
             <div className="flex items-center gap-1 rounded-full bg-white/[0.05] p-1 ring-1 ring-white/10">
               {(
                 [
-                  { id: "live_flood", label: "Live 3D Flood", icon: Sparkles },
+                  { id: "live_flood", label: "Simulated 3D Flood", icon: Sparkles },
                   { id: "split_nbs", label: "Before / After NbS", icon: Columns2 },
                   { id: "explore_360", label: "360° Explore", icon: Compass },
                 ] as const

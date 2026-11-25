@@ -126,7 +126,7 @@ export default function LandingPage() {
                 </div>
                 <span className="flex items-center gap-1.5 rounded-full bg-[#C8FF00]/15 px-2.5 py-1 font-mono text-[10px] font-bold text-[#C8FF00]">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#C8FF00] animate-pulse" />
-                  LIVE API
+                  PILOT API
                 </span>
               </div>
 
@@ -213,7 +213,7 @@ export default function LandingPage() {
                 icon: MapIcon,
                 tag: "01 · MAP STUDIO",
                 title: "Street-Level X-Ray",
-                desc: "Toggle Dark & Satellite views, inspect nearest OSM trunk drains, plot historical flood pins, and launch 360° Street View.",
+                desc: "Toggle Dark & Satellite views, inspect nearest OSM trunk drains, plot historical flood pins, and inspect Mapillary street-level imagery.",
                 href: "/workspace",
               },
               {
