@@ -11,6 +11,7 @@
       "functions": {
         "**/*.py": {
           "maxDuration": 60,
+          "includeFiles": "data/**",
           "excludeFiles": "tests/**"
         }
       }
