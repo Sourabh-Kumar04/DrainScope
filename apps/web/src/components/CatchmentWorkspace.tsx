@@ -332,7 +332,7 @@ export default function CatchmentWorkspace() {
       {(microDrains?.features.length ?? 0) > 0 && (
         <button
           onClick={() => setShowMicroDrains((v) => !v)}
-          className={`absolute bottom-4 left-4 z-20 flex items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] font-medium transition ${
+          className={`absolute bottom-20 left-4 z-20 flex items-center gap-2 rounded-md border px-3 py-1.5 text-[11px] font-medium transition ${
             showMicroDrains
               ? "border-sky-500/50 bg-[#11151C] text-slate-100"
               : "border-[#242B38] bg-[#11151C] text-slate-400 hover:text-slate-200"
