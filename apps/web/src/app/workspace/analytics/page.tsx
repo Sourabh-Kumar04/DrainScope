@@ -30,9 +30,11 @@ export default function AnalyticsRoiPage() {
   const [stressSummary, setStressSummary] = useState<CatchmentSummary | null>(null);
   const [nbsSummary, setNbsSummary] = useState<CatchmentSummary | null>(null);
   const [zones, setZones] = useState<ZoneProperties[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const controller = new AbortController();
+    setLoading(true);
     Promise.all([
       simulateOrganicZones(
         "barapullah",
@@ -56,7 +58,10 @@ export default function AnalyticsRoiPage() {
         setNbsSummary(n.summary);
         setZones(s.zones_geojson.features.map((f) => f.properties));
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => {
+        if (!controller.signal.aborted) setLoading(false);
+      });
     return () => controller.abort();
   }, [rain, stressYr, nbsPct, parkDetention]);
 
@@ -172,16 +177,16 @@ export default function AnalyticsRoiPage() {
             <div className="mt-4 grid grid-cols-3 gap-2 font-mono">
               <div>
                 <p className="font-sans text-[10px] text-slate-400">Critical</p>
-                <p className="text-xl font-bold text-rose-400">{card.data?.critical_count ?? "—"}</p>
+                <p className="text-xl font-bold text-rose-400">{loading ? "…" : (card.data?.critical_count ?? "—")}</p>
               </div>
               <div>
                 <p className="font-sans text-[10px] text-slate-400">High</p>
-                <p className="text-xl font-bold text-orange-400">{card.data?.high_count ?? "—"}</p>
+                <p className="text-xl font-bold text-orange-400">{loading ? "…" : (card.data?.high_count ?? "—")}</p>
               </div>
               <div>
                 <p className="font-sans text-[10px] text-slate-400">Mean WSI</p>
                 <p className="text-xl font-bold text-[#C8FF00]">
-                  {card.data ? `${Math.round(card.data.mean_wsi * 100)}%` : "—"}
+                  {loading ? "…" : (card.data ? `${Math.round(card.data.mean_wsi * 100)}%` : "—")}
                 </p>
               </div>
             </div>
