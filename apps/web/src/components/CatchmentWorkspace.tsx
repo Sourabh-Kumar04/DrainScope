@@ -400,7 +400,7 @@ export default function CatchmentWorkspace() {
       {copiedLink && (
         <div
           role="status"
-          className="absolute left-1/2 top-16 z-40 -translate-x-1/2 rounded-md border border-[#22C5E5]/60 bg-[#151D29] px-4 py-2 text-xs font-medium text-[#E5E7EB] shadow-lg"
+          className="fixed bottom-20 left-1/2 z-50 -translate-x-1/2 rounded-md border border-[#22C5E5] bg-[#151D29] px-4 py-2 text-xs font-semibold text-[#E5E7EB] shadow-2xl"
         >
           Scenario URL updated &amp; copied to clipboard
         </div>

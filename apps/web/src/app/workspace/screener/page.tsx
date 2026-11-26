@@ -154,7 +154,7 @@ export default function SiteScreenerPage() {
               Paste Sites (`Name,lat,lng` — one per line)
             </label>
             <button
-              onClick={() => setCsvText(SAMPLE_CSV)}
+              onClick={() => { setCsvText(SAMPLE_CSV); setError(null); setParseWarnings([]); }}
               className="text-[11px] font-semibold text-cyan-300 hover:underline"
             >
               Load 7 South Delhi Samples

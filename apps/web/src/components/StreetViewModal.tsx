@@ -245,7 +245,7 @@ export default function StreetViewModal({ zone, initialRainfallMmHr = 60, onClos
   const [depthAssets, setDepthAssets] = useState<StreetDepthResponse | null>(null);
 
   const baseDepthCm = Math.max(12, zone.est_ponding_cm);
-  const floodedDepthCm = Math.min(125, Math.max(6, Math.round(baseDepthCm * (rainfallMmHr / 60.0))));
+  const floodedDepthCm = Math.min(125, Math.max(6, Math.round(baseDepthCm * (rainfallMmHr / Math.max(10, initialRainfallMmHr)))));
   const nbsDepthCm = Math.min(125, Math.max(4, Math.round(floodedDepthCm * 0.52)));
   const currentDepthCm = nbsEnabled ? nbsDepthCm : floodedDepthCm;
 

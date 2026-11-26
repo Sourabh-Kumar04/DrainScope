@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, BarChart3, IndianRupee, Trees } from "lucide-react";
+import { ArrowRight, ArrowUpDown, BarChart3, IndianRupee, Trees } from "lucide-react";
 import { simulateOrganicZones } from "@/lib/api";
 import type { CatchmentSummary, ProjectionYear, ZoneProperties } from "@/lib/types";
 
@@ -30,6 +30,16 @@ export default function AnalyticsRoiPage() {
   const [stressSummary, setStressSummary] = useState<CatchmentSummary | null>(null);
   const [nbsSummary, setNbsSummary] = useState<CatchmentSummary | null>(null);
   const [zones, setZones] = useState<ZoneProperties[]>([]);
+  const [sortBy, setSortBy] = useState<"capacityKl" | "areaHa" | "zonesServed" | "estCapexLakhs">("capacityKl");
+  const [sortAsc, setSortAsc] = useState<boolean>(false);
+
+  const toggleSort = (col: "capacityKl" | "areaHa" | "zonesServed" | "estCapexLakhs") => {
+    if (sortBy === col) setSortAsc((v) => !v);
+    else {
+      setSortBy(col);
+      setSortAsc(false);
+    }
+  };
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -71,7 +81,7 @@ export default function AnalyticsRoiPage() {
     for (const z of zones) {
       const pname = (z.park_name || "").trim();
       const lower = pname.toLowerCase();
-      if (!pname || EXCLUDED_NAMES.has(lower) || lower.includes("river") || lower.includes("nallah") || lower.includes("drain")) continue;
+      if (!pname || EXCLUDED_NAMES.has(lower) || lower.includes("river") || lower.includes("yamuna") || lower.includes("nallah") || lower.includes("nala") || lower.includes("drain") || lower.includes("floodplain")) continue;
       if (z.park_capacity_kl <= 0 || z.nearest_park_m > 350) continue;
       const prev = map.get(pname);
       if (prev) {
@@ -99,9 +109,9 @@ export default function AnalyticsRoiPage() {
           sampleZoneId: info.sampleZoneId,
         };
       })
-      .sort((a, b) => b.capacityKl - a.capacityKl)
+      .sort((a, b) => (sortAsc ? a[sortBy] - b[sortBy] : b[sortBy] - a[sortBy]))
       .slice(0, 12);
-  }, [zones, bioswaleCostPerM3]);
+  }, [zones, bioswaleCostPerM3, sortBy, sortAsc]);
 
   const totalDetentionKl = useMemo(
     () => Math.round(topParks.reduce((acc, p) => acc + p.capacityKl, 0)),
@@ -242,10 +252,26 @@ export default function AnalyticsRoiPage() {
             <thead className="text-[10px] uppercase tracking-wider text-slate-400">
               <tr className="border-b border-white/10">
                 <th className="py-2.5 pr-4">Public Park (OSM)</th>
-                <th className="px-3 py-2.5">Park Area</th>
-                <th className="px-3 py-2.5">Adjacent Zones</th>
-                <th className="px-3 py-2.5">Screening Detention</th>
-                <th className="px-3 py-2.5">Est. Screening CapEx</th>
+                <th className="px-3 py-2.5">
+                  <button type="button" onClick={() => toggleSort("areaHa")} className={`inline-flex items-center gap-1 hover:text-white ${sortBy === "areaHa" ? "text-[#22C5E5]" : ""}`}>
+                    Park Area <ArrowUpDown className="h-3 w-3" />
+                  </button>
+                </th>
+                <th className="px-3 py-2.5">
+                  <button type="button" onClick={() => toggleSort("zonesServed")} className={`inline-flex items-center gap-1 hover:text-white ${sortBy === "zonesServed" ? "text-[#22C5E5]" : ""}`}>
+                    Adjacent Zones <ArrowUpDown className="h-3 w-3" />
+                  </button>
+                </th>
+                <th className="px-3 py-2.5">
+                  <button type="button" onClick={() => toggleSort("capacityKl")} className={`inline-flex items-center gap-1 hover:text-white ${sortBy === "capacityKl" ? "text-[#22C5E5]" : ""}`}>
+                    Screening Detention <ArrowUpDown className="h-3 w-3" />
+                  </button>
+                </th>
+                <th className="px-3 py-2.5">
+                  <button type="button" onClick={() => toggleSort("estCapexLakhs")} className={`inline-flex items-center gap-1 hover:text-white ${sortBy === "estCapexLakhs" ? "text-[#22C5E5]" : ""}`}>
+                    Est. Screening CapEx <ArrowUpDown className="h-3 w-3" />
+                  </button>
+                </th>
                 <th className="py-2.5 pl-3 text-right">Inspect</th>
               </tr>
             </thead>
