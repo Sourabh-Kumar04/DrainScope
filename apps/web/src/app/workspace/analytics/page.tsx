@@ -109,8 +109,9 @@ export default function AnalyticsRoiPage() {
           sampleZoneId: info.sampleZoneId,
         };
       })
-      .sort((a, b) => (sortAsc ? a[sortBy] - b[sortBy] : b[sortBy] - a[sortBy]))
-      .slice(0, 12);
+      .sort((a, b) => b.capacityKl - a.capacityKl)
+      .slice(0, 12)
+      .sort((a, b) => (sortAsc ? a[sortBy] - b[sortBy] : b[sortBy] - a[sortBy]));
   }, [zones, bioswaleCostPerM3, sortBy, sortAsc]);
 
   const totalDetentionKl = useMemo(

@@ -463,9 +463,10 @@ export default function CatchmentMap({
           type: "line",
           source: "ds-flow-beds",
           paint: {
-            "line-color": ["match", ["get", "kind"], "road", "#0ea5e9", "drain", "#38bdf8", "#7dd3fc"],
+            "line-color": ["match", ["get", "kind"], "road", "#67e8f9", "drain", "#e0f2fe", "#a5f3fc"],
+            "line-dasharray": [2.5, 2],
             "line-width": ["match", ["get", "kind"], "road", 2.4, 1.6],
-            "line-opacity": ["match", ["get", "kind"], "road", 0.62, 0.45],
+            "line-opacity": ["match", ["get", "kind"], "road", 0.85, 0.72],
           },
         },
         firstSymbolId
@@ -495,7 +496,7 @@ export default function CatchmentMap({
           source: "ds-flow-pulses",
           layout: { "line-cap": "round", "line-join": "round" },
           paint: {
-            "line-color": ["match", ["get", "kind"], "road", "#bae6fd", "drain", "#e0f2fe", "#e0f2fe"],
+            "line-color": "#ffffff",
             "line-width": ["match", ["get", "kind"], "road", 2.1, 1.7],
             "line-opacity": 0.95,
           },
@@ -575,7 +576,7 @@ export default function CatchmentMap({
         type: "circle",
         source: "ds-incidents",
         paint: {
-          "circle-radius": 6,
+          "circle-radius": 7.5,
           "circle-color": "#facc15",
           "circle-stroke-width": 2,
           "circle-stroke-color": "#080b10",
@@ -660,6 +661,14 @@ export default function CatchmentMap({
     });
 
     const handleZoneClick = (e: maplibregl.MapLayerMouseEvent) => {
+      const topLayers = ["ds-incidents-pts", "ds-micro-drains-pts"].filter((id) => Boolean(map.getLayer(id)));
+      if (topLayers.length > 0) {
+        const hitBox: [[number, number], [number, number]] = [
+          [e.point.x - 8, e.point.y - 8],
+          [e.point.x + 8, e.point.y + 8],
+        ];
+        if (map.queryRenderedFeatures(hitBox, { layers: topLayers }).length > 0) return;
+      }
       const zid = e.features?.[0]?.properties?.zone_id;
       if (typeof zid === "string") {
         const full = zonesByIdRef.current.get(zid);
@@ -705,6 +714,7 @@ export default function CatchmentMap({
     });
 
     map.on("click", "ds-incidents-pts", (e: maplibregl.MapLayerMouseEvent) => {
+      e.originalEvent?.stopPropagation();
       const f = e.features?.[0];
       if (!f) return;
       const p = (f.properties ?? {}) as Record<string, unknown>;
@@ -996,7 +1006,7 @@ export default function CatchmentMap({
           </p>
           <p className="mt-0.5 text-[11px] text-slate-300">{hoverInfo.zone.diagnosis_headline}</p>
           <p className="mt-1 font-mono text-[10px] tabular-nums text-slate-400">
-            Depth ~{Math.round(hoverInfo.zone.est_ponding_cm * stormProgress)} cm · Floods at &ge;{hoverInfo.zone.rain_to_flood_mm} mm/hr
+            1-hr Peak ~{hoverInfo.zone.est_ponding_cm} cm{stormMinute < 60 ? ` (T+${Math.round(stormMinute)}m: ~${Math.round(hoverInfo.zone.est_ponding_cm * stormProgress)} cm)` : ""} · Floods at &ge;{hoverInfo.zone.rain_to_flood_mm} mm/hr
           </p>
         </div>
       )}

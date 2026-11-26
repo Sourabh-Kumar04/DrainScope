@@ -163,7 +163,7 @@ export default function SiteScreenerPage() {
           <textarea
             rows={7}
             value={csvText}
-            onChange={(e) => setCsvText(e.target.value)}
+            onChange={(e) => { setCsvText(e.target.value); setError(null); setParseWarnings([]); }}
             className="w-full rounded-xl border border-white/10 bg-[#080B10] p-3 font-mono text-xs text-slate-200 outline-none focus:border-cyan-400/50"
           />
           {error && <p className="mt-2 text-xs text-rose-400">{error}</p>}
