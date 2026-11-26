@@ -464,8 +464,8 @@ export default function CatchmentMap({
           source: "ds-flow-beds",
           paint: {
             "line-color": ["match", ["get", "kind"], "road", "#0ea5e9", "drain", "#38bdf8", "#7dd3fc"],
-            "line-width": ["match", ["get", "kind"], "road", 1.8, 1.1],
-            "line-opacity": ["match", ["get", "kind"], "road", 0.24, 0.16],
+            "line-width": ["match", ["get", "kind"], "road", 2.4, 1.6],
+            "line-opacity": ["match", ["get", "kind"], "road", 0.62, 0.45],
           },
         },
         firstSymbolId
@@ -701,6 +701,30 @@ export default function CatchmentMap({
       map.getCanvas().style.cursor = "pointer";
     });
     map.on("mouseleave", "ds-micro-drains-pts", () => {
+      map.getCanvas().style.cursor = "";
+    });
+
+    map.on("click", "ds-incidents-pts", (e: maplibregl.MapLayerMouseEvent) => {
+      const f = e.features?.[0];
+      if (!f) return;
+      const p = (f.properties ?? {}) as Record<string, unknown>;
+      const title = String(p.name || p.location || p.locality || "Historical Waterlogging Incident");
+      const source = String(p.source || p.agency || "Public Monsoon Record");
+      const date = p.date ? ` · ${String(p.date)}` : "";
+      new maplibregl.Popup({ closeButton: true, maxWidth: "260px" })
+        .setLngLat(e.lngLat)
+        .setHTML(
+          `<div style="background:#111925;color:#E5E7EB;padding:8px 10px;border-radius:6px;font-size:11px;line-height:1.4;">
+            <div style="font-weight:700;color:#FBBF24;">${title}</div>
+            <div style="color:#94A3B8;margin-top:2px;">Source: ${source}${date}</div>
+          </div>`
+        )
+        .addTo(map);
+    });
+    map.on("mouseenter", "ds-incidents-pts", () => {
+      map.getCanvas().style.cursor = "pointer";
+    });
+    map.on("mouseleave", "ds-incidents-pts", () => {
       map.getCanvas().style.cursor = "";
     });
 

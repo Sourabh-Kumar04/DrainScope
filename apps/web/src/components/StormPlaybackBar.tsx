@@ -24,7 +24,7 @@ export default function StormPlaybackBar({
   rainfallMmHr,
 }: StormPlaybackBarProps) {
   return (
-    <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 rounded-md border border-[#263445] bg-[#151D29] px-3.5 py-2 shadow-lg">
+    <div className="absolute bottom-9 xl:bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 rounded-md border border-[#263445] bg-[#151D29] px-3.5 py-2 shadow-lg">
       <button
         onClick={onTogglePlay}
         title={isPlaying ? "Pause storm playback" : "Play 0–60 min storm rise"}
